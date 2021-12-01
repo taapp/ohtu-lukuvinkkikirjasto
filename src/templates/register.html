@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <title>Rekisteröidy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="static/bootstrap.min.css" rel="stylesheet" media="screen">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Rekisteröi käyttäjä</h1>
+      <br>
+      <form action="" method="post">
+        <input type="text" placeholder="Nimimerkki" name="username" value="{{
+          request.form.username }}">
+         <input type="password" placeholder="Salasana" name="password" value="{{
+          request.form.password }}">
+          <input type="password" placeholder="Salasana uudelleen" name="password_confirmation" value="{{
+            request.form.password }}">
+        <input class="btn btn-default" type="submit" value="Rekisteröidy">
+      </form>
+      {% if error %}
+        <p class="error"><strong>Virhe:</strong> {{ error }}
+      {% endif %}
+    </div>
+  </body>
+</html>
