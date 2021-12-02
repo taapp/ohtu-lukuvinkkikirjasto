@@ -1,9 +1,5 @@
 from app import app
-from entities.lukuvinkki import Lukuvinkki
-from entities.lukuvinkkilista import Lukuvinkkilista
 from database_connection import get_database_connection
-from entities.user import User
-
 
 
 def load_user(connection, username, password):
