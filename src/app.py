@@ -16,6 +16,9 @@ def redirect_to_add_subject():
 def redirect_to_home():
     return redirect(url_for("render_home"))
 
+def redirect_to_list():
+    return redirect(url_for("render_list"))
+
 @app.route("/", methods=["GET", "POST"])
 def render_home():
     return render_template("index.html")
@@ -23,6 +26,10 @@ def render_home():
 @app.route("/login", methods=["GET"])
 def render_login():
     return render_template("login.html")
+
+@app.route("/list", methods=["GET", "POST"])
+def render_list():
+    return render_template("list.html")
 
 @app.route("/register", methods=["GET"])
 def render_register():
@@ -54,7 +61,7 @@ def add_subject():
 
     try:
         lukuvinkkilista.lisaa(Lukuvinkki(tyyppi, otsikko, kirjailija, isbn, tagit, url, kommentti, kuvaus, kurssit))
-        return redirect_to_home()
+        return redirect_to_list()
     except Exception as error:
         flash(str(error))
         return redirect_to_register()
