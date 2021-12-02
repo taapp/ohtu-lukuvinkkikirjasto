@@ -8,3 +8,6 @@ class Lukuvinkkilista:
     def listaa(self):
         for lukuvinkki in self.lista:
             print(lukuvinkki)
+
+    def palauta_lista(self):
+        return self.lista
