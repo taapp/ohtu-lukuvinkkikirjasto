@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <title>Lisää lukuvinkki</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="static/bootstrap.min.css" rel="stylesheet" media="screen">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Lisää lukuvinkki</h1>
+      <br>
+      <form action="" method="post">
+        <input type="text" placeholder="Tyyppi (esim. kirja)" name="tyyppi" id="tyyppi"><br>
+         <input type="text" placeholder="Otsikko" name="otsikko" id="otsikko"><br>
+         <input type="text" placeholder="Kirjailija" name="kirjailija" id="kirjailija"><br>
+         <input type="text" placeholder="ISBN" name="isbn" id="isbn"><br>
+         <input type="text" placeholder="Tagit" name="tagit" id="tagit"><br>
+         <input type="text" placeholder="URL" name="url" id="url"><br>
+         <input type="text" placeholder="Kommentit" name="kommentit" id="kommentit"><br>
+         <input type="text" placeholder="Kuvaus" name="kuvaus" id="kuvaus"><br>
+         <input type="text" placeholder="Liittyvät kurssit" name="kurssit" id="kurssit"><br>
+         <button>
+            Lisää
+          </button>
+      </form>
+      {% if error %}
+        <p class="error"><strong>Virhe:</strong> {{ error }}
+      {% endif %}
+    </div>
+  </body>
+</html>
