@@ -1,6 +1,4 @@
-from database_connection import get_database_connection, DATA_DIRECTORY_PATH
-
-
+from database_connection import get_database_connection
 
 def create_int_generator(i_start=0):
     i = i_start

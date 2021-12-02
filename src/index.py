@@ -1,16 +1,9 @@
 from app import app
-from lukuvinkki import Lukuvinkki
-from lukuvinkkilista import Lukuvinkkilista
+from entities.lukuvinkki import Lukuvinkki
+from entities.lukuvinkkilista import Lukuvinkkilista
 from database_connection import get_database_connection
+from entities.user import User
 
-class User:
-    def __init__(self, id, username, password) -> None:
-        self.id = id
-        self.username = username
-        self.password = password
-
-    def __str__(self):
-        return f"username: {self.username}, id: {self.id}"
 
 
 def load_user(connection, username, password):
