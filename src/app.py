@@ -1,13 +1,11 @@
 from flask import Flask, render_template, redirect, url_for, request, flash
 from entities.lukuvinkki import Lukuvinkki
-from entities.lukuvinkkilista import Lukuvinkkilista
 
 app = Flask(__name__)
 
-lukuvinkkilista = Lukuvinkkilista()
-kovakoodattulista = Lukuvinkkilista()
-kovakoodattuvinkki = Lukuvinkki("podcast", "Podin nimi tässä", "Podaaja", url = "www.osoite.com", kommentti = "tässäpä hyvä podi")
-kovakoodattulista.lisaa(kovakoodattuvinkki)
+kovakoodattulista = []
+kovakoodattuvinkki = Lukuvinkki("kirja", "Sinuhe Egyptiläinen", "Mika Waltari", "11111-22222", kommentti = "Yksi lempikirjoistani!")
+kovakoodattulista.append(kovakoodattuvinkki)
 
 def redirect_to_login():
     return redirect(url_for("render_login"))
@@ -34,7 +32,7 @@ def render_login():
 
 @app.route("/list", methods=["GET", "POST"])
 def render_list():
-    return render_template("list.html") #tähän jotenkin spesifioida lukuvinkkilista
+    return render_template("list.html", lista=kovakoodattulista) #tähän jotenkin spesifioida lukuvinkkilista
 
 @app.route("/register", methods=["GET"])
 def render_register():
@@ -63,7 +61,7 @@ def add_subject():
     kurssit = request.form.get("kurssit")
 
     try:
-        lukuvinkkilista.lisaa(Lukuvinkki(tyyppi, otsikko, kirjailija, isbn, tagit, url, kommentti, kuvaus, kurssit))
+        kovakoodattulista.append(Lukuvinkki(tyyppi, otsikko, kirjailija, isbn, tagit, url, kommentti, kuvaus, kurssit))
         return redirect_to_list()
     except Exception as error:
         flash(str(error))
