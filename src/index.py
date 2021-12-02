@@ -19,16 +19,5 @@ def main():
     print(user)
 
 if __name__ == '__main__':
-
-    #testataan, että lukuvinkki ja -lista toimii:
-    #vinkkilista = Lukuvinkkilista()
-    #vinkkilista.lisaa(Lukuvinkki("kirja", "Kirjan nimi tässä", "Kalle Kirjailija", "11111"))
-    #vinkkilista.lisaa(Lukuvinkki("podcast", "Podcastin nimi tässä", "Pertti Podaaja", url="www.osoite.fi", tagit="verkot, lifestyle, sijoittaminen"))
-    #vinkkilista.listaa()
-    vinkki1 = vinkki_service.create_vinkki("kirja", "Kirjan nimi tässä", "Kalle Kirjailija", "11111")
-    vinkki2 = vinkki_service.create_vinkki("podcast", "Podcastin nimi tässä", "Pertti Podaaja", url="www.osoite.fi", tagit="verkot, lifestyle, sijoittaminen")
-    vinkki_service.add_vinkki_to_vinkkilista(vinkki1)
-    vinkki_service.add_vinkki_to_vinkkilista(vinkki2)
-    vinkki_service.listaa_vinkit()
     #käynnistää web-sovelluksen localhostille:
     app.run()
