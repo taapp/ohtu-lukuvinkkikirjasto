@@ -51,6 +51,13 @@ coverage.xml
 .hypothesis/
 .pytest_cache/
 
+# Robot
+
+log.html
+output.xml
+report.html
+selenium-screenshot*
+
 # Translations
 *.mo
 *.pot
