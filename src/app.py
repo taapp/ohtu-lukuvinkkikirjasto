@@ -31,7 +31,7 @@ def render_login():
 
 @app.route("/list", methods=["GET", "POST"])
 def render_list():
-    return render_template("list.html", lukuvinkkilista=lukuvinkkilista)
+    return render_template("list.html", lista=lukuvinkkilista) #tähän jotenkin spesifioida lukuvinkkilista
 
 @app.route("/register", methods=["GET"])
 def render_register():
