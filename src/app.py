@@ -4,6 +4,8 @@ from entities.lukuvinkkilista import Lukuvinkkilista
 
 app = Flask(__name__)
 
+lukuvinkkilista = Lukuvinkkilista()
+
 def redirect_to_login():
     return redirect(url_for("render_login"))
 
@@ -29,7 +31,7 @@ def render_login():
 
 @app.route("/list", methods=["GET", "POST"])
 def render_list():
-    return render_template("list.html")
+    return render_template("list.html", lukuvinkkilista=lukuvinkkilista)
 
 @app.route("/register", methods=["GET"])
 def render_register():
@@ -56,8 +58,6 @@ def add_subject():
     kommentti = request.form.get("kommentti")
     kuvaus = request.form.get("kuvaus")
     kurssit = request.form.get("kurssit")
-    
-    lukuvinkkilista = Lukuvinkkilista()
 
     try:
         lukuvinkkilista.lisaa(Lukuvinkki(tyyppi, otsikko, kirjailija, isbn, tagit, url, kommentti, kuvaus, kurssit))
