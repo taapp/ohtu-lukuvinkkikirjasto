@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Tyyppi</th>
+      <th scope="col">Otsikko</th>
+      <th scope="col">Tekijä</th>
+      <th scope="col">ISBN</th>
+      <th scope="col">Tagit</th>
+      <th scope="col">URL</th>
+      <th scope="col">Kommentit</th>
+      <th scope="col">Kuvaus</th>
+      <th scope="col">Kurssit</th>
+    </tr>
+    </thead>
+    <tbody>
+        {% for lukuvinkki in lukuvinkkilista %}
+          <tr>
+             <td>{{lukuvinkki.tyyppi}}</td>
+             <td>{{lukuvinkki.otsikko}}</td>
+             <td>{{lukuvinkki.kirjailija}}</td>
+             <td>{{lukuvinkki.isbn}}</td>
+             <td>{{lukuvinkki.tagit}}</td>
+             <td>{{lukuvinkki.url}}</td>
+             <td>{{lukuvinkki.kommentti}}</td>
+             <td>{{lukuvinkki.kuvaus}}</td>
+             <td>{{lukuvinkki.kurssit}}</td>
+            
+          </tr>
+        {% endfor %}
+        </tbody>
+       </table>
+      
+      {% endblock %}
