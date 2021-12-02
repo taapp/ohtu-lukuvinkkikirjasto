@@ -18,7 +18,8 @@ Add Book With Valid Parameters
     Set Kuvaus  hyvä tenttikirja
     Set Kurssit  ohtu
     Submit Credentials
-    Add Book Should Succeed
+    #Add Book Should Succeed
+    Page Should Contain  Noksu kulkee ja keksii
 
 *** Keywords ***
 #Add Book And Go To Main Page
