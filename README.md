@@ -10,7 +10,7 @@
 
 ### Ohjelman suorittaminen
 Ohjelma tulee olemaan web sovellus, mutta sovelluksella ei ole vielä osoitetta, joten tässä ohje kuinka ajaa se linux ympäristössä.
-Kopioi repositorio ja mene sen juurikansiossa olevaan src kansioon ja aja komennot
+Kopioi repositorio ja mene sen juurikansiossa olevaan src kansioon ja aja komennot.
 ```
 poetry install
 ```
