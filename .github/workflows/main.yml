@@ -26,6 +26,6 @@ jobs:
       - name: Pylint tests
         run: poetry run pylint --fail-under=2 src
       - name: Run Robot Framework tests
-        run: poetry run robo src/tests
+        run: poetry run robot src/tests
         timeout-minutes: 2
 
