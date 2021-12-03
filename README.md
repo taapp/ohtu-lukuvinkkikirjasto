@@ -22,3 +22,6 @@ Aja sen jälkeen komento, jolloin sovellus lähtee päälle.
 flask run
 ```
 Mene omavalintaisella selaimella komentorivillä näkyvään osoitteeseen, jossa sovelluksen nyt pitäisi näkyä.
+
+### Definition of Done
+User story toimii backlogin hyväksymiskriteereiden mukaan ja sille on toteutettu automaattisia testejä vähintään kyseisen storyn tärkeimmille ominaisuuksille.
