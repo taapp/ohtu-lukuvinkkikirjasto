@@ -32,3 +32,5 @@ class AppLibrary:
                 "kuvaus": kuvaus,
                 "kurssit": kurssit
         }
+
+        requests.post(f"{self._base_url}/add_subject", data=data)

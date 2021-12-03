@@ -12,6 +12,7 @@ ${HOME URL}  http://${SERVER}
 #${LOGIN URL}  http://${SERVER}/login
 #${REGISTER URL}  http://${SERVER}/register
 ${ADD_SUBJECT URL}  http://${SERVER}/add_subject
+${LIST URL}  http://${SERVER}/list
 
 *** Keywords ***
 Open And Configure Browser
@@ -28,8 +29,14 @@ Main Page Should Be Open
 Add_subject Page Should Be Open
     Title Should Be  Lisää lukuvinkki
 
+List Page Should Be Open
+    Page Should Contain  Sinuhe Egyptiläinen
+
 Go To Main Page
     Go To  ${HOME URL}
 
 Go To Add_subject Page
     Go To  ${ADD_SUBJECT URL}
+
+Go To List Page
+    Go To  ${LIST URL}

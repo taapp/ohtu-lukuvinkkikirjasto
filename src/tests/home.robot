@@ -17,19 +17,27 @@ Add Book With Valid Parameters
     Set Kommentit  osta
     Set Kuvaus  hyvä tenttikirja
     Set Kurssit  ohtu
-    Submit Credentials
-    #Add Book Should Succeed
-    Page Should Contain  Noksu kulkee ja keksii
+    Submit Details
+    Add Book Should Succeed
+
+See Reading List
+    Go To List Page
+    See Reading List Should Succeed
 
 *** Keywords ***
 #Add Book And Go To Main Page
 
 #Testaa tietojen syöttämistä
 Add Book Should Succeed
-    Main Page Should Be Open
+    List Page Should Be Open
+    Page Should Contain  Noksu kulkee ja keksii
+
+See Reading List Should Succeed
+    List Page Should Be Open
+    Page Should Contain  Sinuhe Egyptiläinen
 
 
-Submit Credentials
+Submit Details
     Click Button  Lisää
 
 Set Tyyppi
