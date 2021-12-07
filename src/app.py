@@ -49,7 +49,8 @@ def handle_register():
     password = request.form.get("password")
     password_confirmation = request.form.get("password_confirmation")
 
-@app.route("/add_subject", methods=["POST"])
+
+@app.route("/add_subject", methods=["GET", "POST"])
 def add_subject():
     tyyppi = request.form.get("tyyppi")
     otsikko = request.form.get("otsikko")

@@ -9,7 +9,23 @@
       <h1>Lisää lukuvinkki</h1>
       <br>
       <form action="" method="post">
-        <input type="text" placeholder="Tyyppi (esim. kirja)" name="tyyppi" id="tyyppi"><br>
+        <fieldset>
+          <legend>Valitse tyyppi</legend>
+            <input type="radio" id="kirja" name="tyyppi" value="kirja">
+            <label for="kirja">Kirja</label><br/>
+
+            <input type="radio" id="podcast" name="tyyppi" value="podcast">
+            <label for="podcast">Podcast</label><br/>
+
+            <input type="radio" id="artikkeli" name="tyyppi" value="artikkeli">
+            <label for="artikkeli">Artikkeli</label>
+
+            <input type="radio" id="video" name="tyyppi" value="video">
+            <label for="video">Video</label>
+
+            <input type="radio" id="muu" name="tyyppi" value="muu">
+            <label for="muu">Muu</label>
+        </fieldset>
          <input type="text" placeholder="Otsikko" name="otsikko" id="otsikko"><br>
          <input type="text" placeholder="Kirjailija" name="kirjailija" id="kirjailija"><br>
          <input type="text" placeholder="ISBN" name="isbn" id="isbn"><br>
