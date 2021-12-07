@@ -3,6 +3,14 @@
     <title>Lisää lukuvinkki</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="static/bootstrap.min.css" rel="stylesheet" media="screen">
+    <script type="text/javascript">
+      function showIsbn() {
+              document.getElementById('isbn').style.display = 'block';
+            }
+      function hideIsbn() {
+              document.getElementById('isbn').style.display = 'none';
+          }
+      </script>
   </head>
   <body>
     <div class="container">
@@ -11,24 +19,25 @@
       <form action="" method="post">
         <fieldset>
           <legend>Valitse tyyppi</legend>
-            <input type="radio" id="kirja" name="tyyppi" value="kirja">
+    
+            <input type="radio" onclick="showIsbn();" id="kirja" name="tyyppi" value="kirja">
             <label for="kirja">Kirja</label><br/>
 
-            <input type="radio" id="podcast" name="tyyppi" value="podcast">
+            <input type="radio" onclick="hideIsbn();" id="podcast" name="tyyppi" value="podcast">
             <label for="podcast">Podcast</label><br/>
 
-            <input type="radio" id="artikkeli" name="tyyppi" value="artikkeli">
+            <input type="radio" onclick="hideIsbn();" id="artikkeli" name="tyyppi" value="artikkeli">
             <label for="artikkeli">Artikkeli</label><br/>
 
-            <input type="radio" id="video" name="tyyppi" value="video">
+            <input type="radio" onclick="hideIsbn();" id="video" name="tyyppi" value="video">
             <label for="video">Video</label><br/>
 
-            <input type="radio" id="muu" name="tyyppi" value="muu">
+            <input type="radio" onclick="hideIsbn();" id="muu" name="tyyppi" value="muu">
             <label for="muu">Muu</label><br/>
         </fieldset>
          <input type="text" placeholder="Otsikko" name="otsikko" id="otsikko"><br>
          <input type="text" placeholder="Kirjailija" name="kirjailija" id="kirjailija"><br>
-         <input type="text" placeholder="ISBN" name="isbn" id="isbn"><br>
+         <input style="display: none;" type="text" placeholder="ISBN" name="isbn" id="isbn"><br>
          <input type="text" placeholder="Tagit" name="tagit" id="tagit"><br>
          <input type="text" placeholder="URL" name="url" id="url"><br>
          <input type="text" placeholder="Kommentit" name="kommentit" id="kommentit"><br>
