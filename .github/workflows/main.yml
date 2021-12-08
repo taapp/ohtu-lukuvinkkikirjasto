@@ -28,4 +28,7 @@ jobs:
       - name: Run Robot Framework tests
         run: bash run_robot_tests.sh
         timeout-minutes: 2
-
+      - name: Coverage report
+        run: poetry run coverage xml
+      - name: Coverage report to Codecov
+        run: bash <(curl -s https://codecov.io/bash)
