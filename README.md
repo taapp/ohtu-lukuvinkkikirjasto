@@ -8,6 +8,8 @@
 
 ![GitHub Actions](https://github.com/taapp/ohtu-lukuvinkkikirjasto/workflows/CI/badge.svg)
 
+[![codecov](https://codecov.io/gh/taapp/ohtu-lukuvinkkikirjasto/branch/main/graph/badge.svg?token=FLWIEJ35C8)](https://codecov.io/gh/taapp/ohtu-lukuvinkkikirjasto)
+
 ### Ohjelman suorittaminen
 Ohjelma tulee olemaan web sovellus, mutta sovelluksella ei ole vielä osoitetta, joten tässä ohje kuinka ajaa se linux ympäristössä.
 Kopioi repositorio ja mene sen juurikansiossa olevaan src kansioon ja aja komennot.
