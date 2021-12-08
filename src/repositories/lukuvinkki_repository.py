@@ -17,5 +17,7 @@ class LukuvinkkiRepository:
 
         self.connection.commit()
 
+        return lukuvinkki
+
 
 lukuvinkki_repository = LukuvinkkiRepository(get_database_connection())
