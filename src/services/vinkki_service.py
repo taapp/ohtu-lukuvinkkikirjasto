@@ -2,6 +2,10 @@ from entities.lukuvinkki import Lukuvinkki
 from entities.lukuvinkkilista import Lukuvinkkilista
 from entities.user import User
 
+from repositories.lukuvinkki_repository import (
+	lukuvinkki_repository as default_lukuvinkki_repository
+)
+
 class VinkkiService:
     def __init__(self):
         self.users = []
