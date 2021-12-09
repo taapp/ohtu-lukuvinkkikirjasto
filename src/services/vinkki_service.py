@@ -12,7 +12,7 @@ class VinkkiService:
         self.vinkkilista = Lukuvinkkilista()
         self._lukuvinkki_repository = lukuvinkki_repository
 
-    def create_user(self, id, username, password):
+    def create_user(self, id, username, password): # pylint: disable invalid-name
         return User(id, username, password) # pylint: disable invalid-name
 
     def create_vinkki(self, tyyppi, otsikko, kirjailija, isbn=None, tagit=None, url=None,
