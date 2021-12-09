@@ -9,7 +9,7 @@ from repositories.lukuvinkki_repository import (
 class VinkkiService:
     def __init__(self, lukuvinkki_repository=default_lukuvinkki_repository):
         self.users = []
-        self.vinkkilista = Lukuvinkkilista()
+        #self.vinkkilista = Lukuvinkkilista()
         self._lukuvinkki_repository = lukuvinkki_repository
 
     def create_user(self, id, username, password): # pylint: disable invalid-name
@@ -22,7 +22,8 @@ class VinkkiService:
                 kuvaus, kurssit, luettu)
 
     def add_vinkki_to_vinkkilista(self, vinkki):
-        self.vinkkilista.lisaa(vinkki)
+        #self.vinkkilista.lisaa(vinkki)
+        self._lukuvinkki_repository.create(vinkki)
 
 #    def listaa_vinkit(self):
 #        self.vinkkilista.listaa()
@@ -31,6 +32,8 @@ class VinkkiService:
         return self._lukuvinkki_repository.hae_vinkit()
 
     def palauta_lista(self):
-        return self.vinkkilista.palauta_lista()
+        #return self.vinkkilista.palauta_lista()
+        #return self._lukuvinkki_repository.hae_vinkit()
+        return self.listaa_lukuvinkit()
 
 vinkki_service = VinkkiService()

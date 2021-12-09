@@ -37,7 +37,7 @@ def create_vinkit_table(connection):
     cursor = connection.cursor()
     cursor.execute('''
         create table vinkit (
-            tyyppi TEXT NOT NULL,
+            tyyppi TEXT,
             otsikko TEXT,
             kirjailija TEXT,
             isbn TEXT,

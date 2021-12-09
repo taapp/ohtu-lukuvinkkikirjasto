@@ -73,6 +73,9 @@ def login():
     username = request.form.get("username")
     password = request.form.get("password")
     user = load_user(username)
+
+    if not user:
+        return render_template("login.html", error = "Väärä tunnus tai salasana!")
     if (user.get_password(username) == password):
         login_user(user)
         return render_list()
@@ -116,11 +119,10 @@ def add_subject():
     kommentti = request.form.get("kommentti")
     kuvaus = request.form.get("kuvaus")
     kurssit = request.form.get("kurssit")
-
     try:
-        #lukuvinkkilista.lisaa(Lukuvinkki(tyyppi, otsikko, kirjailija, isbn, tagit, url, kommentti, kuvaus, kurssit))
         vinkki_service.add_vinkki_to_vinkkilista(vinkki_service.create_vinkki(tyyppi, otsikko, kirjailija, isbn, tagit, url, kommentti, kuvaus, kurssit))
         return render_list()
     except Exception as error:
         flash(str(error))
         return redirect_to_home()
+

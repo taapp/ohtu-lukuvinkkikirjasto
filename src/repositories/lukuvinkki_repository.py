@@ -12,20 +12,21 @@ class LukuvinkkiRepository:
     
     def create(self, lukuvinkki):
         cursor = self._connection.cursor()
-
+        print("LukuvinkkiRepository, create-metodi")
         cursor.execute(
-            'insert into lukuvinkit (tyyppi, otsikko, kirjailija, isbn, tagit, url, kommentti, kuvaus, kurssit, luettu) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+            #'insert into lukuvinkit (tyyppi, otsikko, kirjailija, isbn, tagit, url, kommentti, kuvaus, kurssit, luettu) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+            'insert into vinkit (tyyppi, otsikko, kirjailija, isbn, tagit, url, kommentti, kuvaus, kurssit, luettu) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
             (lukuvinkki.tyyppi, lukuvinkki.otsikko, lukuvinkki.kirjailija, lukuvinkki.isbn, lukuvinkki.tagit, lukuvinkki.url, lukuvinkki.kommentti, lukuvinkki.kuvaus, lukuvinkki.kurssit, lukuvinkki.luettu)
 
         )
 
-        self.connection.commit()
+        self._connection.commit()
 
         return lukuvinkki
 
     def hae_vinkit(self):
-        cursor = self.connection.cursor()
-        cursor.execute('select * from lukuvinkit')
+        cursor = self._connection.cursor()
+        cursor.execute('select * from vinkit')
 
         rows = cursor.fetchall()
 

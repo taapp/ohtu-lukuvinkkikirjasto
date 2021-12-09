@@ -8,6 +8,7 @@ authors = ["taapp <julius.nieminen@helsinki.fi>"]
 python = "^3.8"
 Flask = "^2.0.2"
 requests = "^2.26.0"
+Flask-Login = "^0.5.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2.5"
