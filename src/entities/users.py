@@ -3,7 +3,7 @@ from flask_login import UserMixin
 class Users(UserMixin):
     # Luodaan näennäinen tietokanta käyttäjistä
     user_database = {"kayttaja": ("kayttaja", "salasana"),
-    "tunnus": ("tunnus", "passu"), "a": ("a", "a")}
+    "tunnus": ("tunnus", "passu")}
 
     def __init__(self, id, username, password):
         self.id = id
