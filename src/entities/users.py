@@ -29,6 +29,9 @@ class Users(UserMixin):
     def get_id(self):
         return self.id
 
+    def roles(self):
+        return ["ADMIN", "USER"]
+
     @classmethod
     def get(cls, id):
         return cls.user_database.get(id)
