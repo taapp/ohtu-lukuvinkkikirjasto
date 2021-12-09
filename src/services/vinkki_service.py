@@ -23,4 +23,7 @@ class VinkkiService:
     def listaa_vinkit(self):
         self.vinkkilista.listaa()
 
+    def palauta_lista(self):
+        return self.vinkkilista.palauta_lista()
+
 vinkki_service = VinkkiService()
