@@ -25,5 +25,12 @@ flask run
 ```
 Mene omavalintaisella selaimella komentorivillä näkyvään osoitteeseen, jossa sovelluksen nyt pitäisi näkyä.
 
+Ohjelmassa on kaksi käyttäjää, joilla voit kirjautua sisään:
+
+Käyttäjätunnus: "käyttäjä", Salasana: "salasana"
+
+Käyttäjätunnus: "tunnus", Salasana: "passu"
+
+
 ### Definition of Done
 User story toimii backlogin hyväksymiskriteereiden mukaan ja sille on toteutettu automaattisia testejä vähintään kyseisen storyn tärkeimmille ominaisuuksille.
