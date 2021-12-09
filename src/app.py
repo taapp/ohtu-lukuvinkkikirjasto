@@ -1,5 +1,6 @@
 from flask import Flask, render_template, redirect, url_for, request, flash
-from flask_login import LoginManager, login_required, login_user, logout_user
+from flask_login import LoginManager, login_required, login_user, logout_user, current_user
+from functools import wraps
 from entities.lukuvinkki import Lukuvinkki
 from entities.lukuvinkkilista import Lukuvinkkilista
 from entities.users import Users
@@ -35,6 +36,22 @@ def redirect_to_home():
 def redirect_to_list():
     return redirect(url_for("render_list"))
 
+def login_required(_func=None, *, role="ANY"):
+    def wrapper(func):
+        @wraps(func)
+        def decorated_view(*args, **kwargs):
+            if not (current_user and current_user.is_authenticated):
+                return login_manager.unauthorized()
+
+            acceptable_roles = set(("ANY", *current_user.roles()))
+
+            if role not in acceptable_roles:
+                return login_manager.unauthorized()
+
+            return func(*args, **kwargs)
+        return decorated_view
+    return wrapper if _func is None else wrapper(_func)
+
 @app.route("/", methods=["GET", "POST"])
 def render_home():
     return render_template("index.html")
@@ -58,7 +75,7 @@ def login():
     user = load_user(username)
     if (user.get_password(username) == password):
         login_user(user)
-        return render_template("list.html")
+        return render_list()
     if not user:
         return render_template("login.html", error = "Väärä tunnus tai salasana!")
 
@@ -99,7 +116,7 @@ def add_subject():
     try:
         #lukuvinkkilista.lisaa(Lukuvinkki(tyyppi, otsikko, kirjailija, isbn, tagit, url, kommentti, kuvaus, kurssit))
         vinkki_service.add_vinkki_to_vinkkilista(vinkki_service.create_vinkki(tyyppi, otsikko, kirjailija, isbn, tagit, url, kommentti, kuvaus, kurssit))
-        return redirect_to_list()
+        return render_list()
     except Exception as error:
         flash(str(error))
-        return redirect_to_register()
+        return redirect_to_home()
