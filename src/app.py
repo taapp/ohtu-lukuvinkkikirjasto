@@ -99,6 +99,10 @@ def handle_register():
     password = request.form.get("password")
     password_confirmation = request.form.get("password_confirmation")
 
+@app.route("/logout")
+def logout():
+    logout_user()
+    return redirect_to_home()
 
 @app.route("/add_subject", methods=["GET", "POST"])
 @login_required
