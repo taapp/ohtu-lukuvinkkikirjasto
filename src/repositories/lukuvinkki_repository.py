@@ -1,6 +1,10 @@
 from entities.lukuvinkki import Lukuvinkki
 from database_connection import get_database_connection
 
+def get_vinkki_by_row(row):
+    return Lukuvinkki(row["tyyppi"], row["otsikko"], row["kirjailija"], row["isbn"], row["tagit"],
+        row["url"], row["kommentti"], row["kuvaus"], row["kurssit"], row["luettu"]) if row else None
+
 class LukuvinkkiRepository:
     def __init__(self, connection):
         self._connection = connection
@@ -19,5 +23,12 @@ class LukuvinkkiRepository:
 
         return lukuvinkki
 
+    def hae_vinkit(self):
+        cursor = self.connection.cursor()
+        cursor.execute('select * from lukuvinkit')
+
+        rows = cursor.fetchall()
+
+        return list(map(get_vinkki_by_row, rows))
 
 lukuvinkki_repository = LukuvinkkiRepository(get_database_connection())

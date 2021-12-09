@@ -7,9 +7,10 @@ from repositories.lukuvinkki_repository import (
 )
 
 class VinkkiService:
-    def __init__(self):
+    def __init__(self, lukuvinkki_repository=default_lukuvinkki_repository):
         self.users = []
         self.vinkkilista = Lukuvinkkilista()
+        self._lukuvinkki_repository = lukuvinkki_repository
 
     def create_user(self, id, username, password):
         return User(id, username, password)
@@ -20,8 +21,10 @@ class VinkkiService:
     def add_vinkki_to_vinkkilista(self, vinkki):
         self.vinkkilista.lisaa(vinkki)
 
-    def listaa_vinkit(self):
-        self.vinkkilista.listaa()
+#    def listaa_vinkit(self):
+#        self.vinkkilista.listaa()
+    def listaa_lukuvinkit(self):
+        return self._lukuvinkki_repository.hae_vinkit()
 
     def palauta_lista(self):
         return self.vinkkilista.palauta_lista()
