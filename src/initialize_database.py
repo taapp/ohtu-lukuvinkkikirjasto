@@ -37,8 +37,16 @@ def create_vinkit_table(connection):
     cursor = connection.cursor()
     cursor.execute('''
         create table vinkit (
-            id integer PRIMARY KEY,
-            name TEXT NOT NULL
+            tyyppi TEXT NOT NULL,
+            otsikko TEXT,
+            kirjailija TEXT,
+            isbn TEXT,
+            tagit TEXT,
+            url TEXT,
+            kommentti TEXT,
+            kuvaus TEXT,
+            kurssit TEXT,
+            luettu INTEGER
         );
     ''')
     connection.commit()
@@ -54,9 +62,9 @@ def insert_default_data(connection):
     sql_users = """INSERT INTO users(id, name, password) VALUES (?,?,?)"""
     cursor.execute(
         sql_users, [next(generator_user_id), "user", "passu"])
-    sql_vinkit = """INSERT INTO vinkit(id, name) VALUES (?,?)"""
-    cursor.execute(
-        sql_vinkit, [next(generator_vinkki_id), "kirja1"])
+    #sql_vinkit = """INSERT INTO vinkit(id, name) VALUES (?,?)"""
+    #cursor.execute(
+    #    sql_vinkit, [next(generator_vinkki_id), "kirja1"])
     connection.commit()
 
 
