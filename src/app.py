@@ -15,11 +15,6 @@ login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.login_view = "login"
 
-#lukuvinkkilista = Lukuvinkkilista()
-#kovakoodattuvinkki = Lukuvinkki("kirja", "Sinuhe Egyptiläinen", "Mika Waltari", "11111-22222", kommentti = "Yksi lempikirjoistani!")
-#lukuvinkkilista.lisaa(kovakoodattuvinkki)
-kovakoodattuvinkki = vinkki_service.create_vinkki("kirja", "Sinuhe Egyptiläinen", "Mika Waltari", "11111-22222", kommentti = "Yksi lempikirjoistani!")
-vinkki_service.add_vinkki_to_vinkkilista(kovakoodattuvinkki)
 
 def redirect_to_login():
     return redirect(url_for("render_login"))

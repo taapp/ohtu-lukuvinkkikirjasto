@@ -62,9 +62,8 @@ def insert_default_data(connection):
     sql_users = """INSERT INTO users(id, name, password) VALUES (?,?,?)"""
     cursor.execute(
         sql_users, [next(generator_user_id), "user", "passu"])
-    #sql_vinkit = """INSERT INTO vinkit(id, name) VALUES (?,?)"""
-    #cursor.execute(
-    #    sql_vinkit, [next(generator_vinkki_id), "kirja1"])
+    sql_vinkit = 'insert into vinkit (tyyppi, otsikko, kirjailija, isbn, tagit, url, kommentti, kuvaus, kurssit, luettu) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
+    cursor.execute(sql_vinkit, ["kirja", "Sinuhe Egyptiläinen", "Mika Waltari", "11111-22222", "","","Yksi lempikirjoistani!","","",""])
     connection.commit()
 
 
