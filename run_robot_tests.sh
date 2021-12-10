@@ -1,11 +1,9 @@
-#tämä koodi on otettu suoraan kurssimateriaalista https://ohjelmistotuotanto-hy.github.io/tehtavat3/
 #!/bin/bash
 
-# käynnistetään Flask-palvelin taustalle (huomaa & komennon lopussa)
+# käynnistetään Flask-palvelin taustalle
 poetry run python3 src/index.py &
 
-# odetetaan, että palvelin on valmiina ottamaan vastaan pyyntöjä,
-# jolloin localhost:5000/ping antaa vastauksen statuskoodilla 200
+# odetetaan, että palvelin on valmiina ottamaan vastaan pyyntöjä
 #while [[ "$(curl -s -o /dev/null -w ''%{http_code}'' localhost:5000/ping)" != "200" ]]; 
 #  do sleep 1; 
 #done
@@ -14,10 +12,9 @@ sleep 15
 # suoritetaan testit
 poetry run robot src/tests
 
-# pysäytetään Flask-palvelin portissa 5000
-function clean_up {
-  kill $(lsof -t -i:5000)
-}
+status=$?
 
-# suoritetaan clean_up-funktio, kun prosessi lopettaa suorituksen
-trap clean_up EXIT
+# pysäytetään Flask-palvelin portissa 5000
+kill $(lsof -t -i:5000)
+
+exit $status
