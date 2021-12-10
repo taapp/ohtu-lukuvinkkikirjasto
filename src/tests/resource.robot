@@ -6,13 +6,15 @@ Library  ../AppLibrary.py
 ${SERVER}  localhost:5000
 ${BROWSER}  headlesschrome
 #${BROWSER}  chrome
-${DELAY}  0 seconds
+${DELAY}  0.5 seconds
 #${DELAY}  0.5 seconds
 ${HOME URL}  http://${SERVER}
-#${LOGIN URL}  http://${SERVER}/login
+${LOGIN URL}  http://${SERVER}/login
 #${REGISTER URL}  http://${SERVER}/register
 ${ADD_SUBJECT URL}  http://${SERVER}/add_subject
 ${LIST URL}  http://${SERVER}/list
+${LOGIN_NAME}  tunnus
+${PASSWORD}  passu
 
 *** Keywords ***
 Open And Configure Browser
@@ -40,3 +42,6 @@ Go To Add_subject Page
 
 Go To List Page
     Go To  ${LIST URL}
+
+Go To Login Page
+    Go To  ${LOGIN URL}

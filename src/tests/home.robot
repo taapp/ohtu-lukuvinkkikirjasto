@@ -7,6 +7,8 @@ Test Setup  Go To Main Page
 
 *** Test Cases ***
 Add Book With Valid Parameters
+    Go To Main Page
+    Login
     Go To Add_subject Page
     Set Tyyppi  kirja
     Set Otsikko  Noksu kulkee ja keksii
@@ -34,15 +36,27 @@ Add Book Should Succeed
 
 See Reading List Should Succeed
     List Page Should Be Open
-    Page Should Contain  Sinuhe Egyptiläinen
 
+Login
+    Go To Login Page
+    Set Nimimerkki  tunnus
+    Set Salasana  passu
+    Click Button  Kirjaudu
 
 Submit Details
     Click Button  Lisää
 
+Set Nimimerkki
+    [Arguments]  ${nimimerkki}
+    Input Text  username  ${LOGIN_NAME}
+
+Set Salasana
+    [Arguments]  ${salasana}
+    Input Text  password  ${PASSWORD}
+
 Set Tyyppi
     [Arguments]  ${tyyppi}
-    Input Text  tyyppi  ${tyyppi}
+    Click Button  ${tyyppi}
 
 Set Otsikko
     [Arguments]  ${otsikko}
