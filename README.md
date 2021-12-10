@@ -8,6 +8,7 @@
 
 [2. sprintin testirelease](https://github.com/taapp/ohtu-lukuvinkkikirjasto/releases/tag/testaus)
 
+
 ![GitHub Actions](https://github.com/taapp/ohtu-lukuvinkkikirjasto/workflows/CI/badge.svg)
 
 [![codecov](https://codecov.io/gh/taapp/ohtu-lukuvinkkikirjasto/branch/main/graph/badge.svg?token=FLWIEJ35C8)](https://codecov.io/gh/taapp/ohtu-lukuvinkkikirjasto)
@@ -33,6 +34,7 @@ Käyttäjätunnus: "käyttäjä", Salasana: "salasana"
 
 Käyttäjätunnus: "tunnus", Salasana: "passu"
 
+HUOM! 2. sprintin releasessa ei vielä ole rekisteröitymistoimintoa. Kirjauduttasi voit lisätä lukuvinkin täyttämällä kentät ja klikkaamalla "Lisää".
 
 ### Definition of Done
 User story toimii backlogin hyväksymiskriteereiden mukaan ja sille on toteutettu automaattisia testejä vähintään kyseisen storyn tärkeimmille ominaisuuksille.
