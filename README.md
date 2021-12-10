@@ -6,7 +6,7 @@
 
 [Miniprojektin backlogit](https://docs.google.com/spreadsheets/d/1dgDb1iogv_WNv830mru2iMjrutRrwumTPhakcXey25w/edit#gid=0)
 
-[2. sprintin testirelease](https://github.com/taapp/ohtu-lukuvinkkikirjasto/releases/tag/testaus)
+[2. sprintin release](https://github.com/taapp/ohtu-lukuvinkkikirjasto/releases/tag/sprint2)
 
 
 ![GitHub Actions](https://github.com/taapp/ohtu-lukuvinkkikirjasto/workflows/CI/badge.svg)
