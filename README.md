@@ -34,7 +34,7 @@ Käyttäjätunnus: "käyttäjä", Salasana: "salasana"
 
 Käyttäjätunnus: "tunnus", Salasana: "passu"
 
-HUOM! 2. sprintin releasessa ei vielä ole rekisteröitymistoimintoa. Kirjauduttuasi voit lisätä lukuvinkin täyttämällä kentät ja klikkaamalla "Lisää".
+HUOM! 2. sprintin releasessa ei vielä ole rekisteröitymistoimintoa. Kirjauduttuasi voit lisätä lukuvinkin klikkaamalla "Lisää lukuvinkki", täyttämällä kentät ja klikkaamalla "Lisää".
 
 ### Definition of Done
 User story toimii backlogin hyväksymiskriteereiden mukaan ja sille on toteutettu automaattisia testejä vähintään kyseisen storyn tärkeimmille ominaisuuksille.
