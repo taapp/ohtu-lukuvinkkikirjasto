@@ -23,9 +23,6 @@ Open And Configure Browser
     Maximize Browser Window
     Set Selenium Speed  ${DELAY}
 
-#Login Page Should Be Open
-#    Title Should Be  Kirjaudu sisään
-
 Main Page Should Be Open
     Page Should Contain  Lukuvinkkikirjasto
 
@@ -39,7 +36,7 @@ List Page Should Be Open
     Page Should Contain  ISBN
 
 Login Page Should Be Open
-    Page Should Contain  Kirjaudu sisään
+    Title Should Be  Kirjaudu sisään
 
 Go To Main Page
     Go To  ${HOME URL}

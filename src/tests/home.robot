@@ -118,7 +118,7 @@ Data Is Saved Succeed
     List Page Should Be Open
     Page Should Contain  Noksu kulkee ja keksii
     
-#register ei toimi sillä rekisteröitymistä ei ole toteutettu vielä
+#register ei tee mitään sillä rekisteröitymistä ei ole toteutettu vielä
 Register
     Go To Register Page
     Set Nimimerkki  moro
