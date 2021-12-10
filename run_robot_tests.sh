@@ -4,12 +4,13 @@
 poetry run python3 src/index.py &
 
 # odetetaan, että palvelin on valmiina ottamaan vastaan pyyntöjä
-while [[ "$(curl -s -o /dev/null -w ''%{http_code}'' localhost:5000/ping)" != "200" ]]; 
-  do sleep 1; 
-done
+#while [[ "$(curl -s -o /dev/null -w ''%{http_code}'' localhost:5000/ping)" != "200" ]]; 
+#  do sleep 1; 
+#done
+sleep 15
 
 # suoritetaan testit
-poetry run robot src/e2e
+poetry run robot src/tests
 
 status=$?
 
