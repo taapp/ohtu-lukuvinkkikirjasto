@@ -40,7 +40,7 @@ Add Podcast With Valid Parameters
     Set Tyyppi  podcast
     Set Otsikko  joku podcast
     Set Kirjailija  Kari Hietalahti
-    Set Tagit  aika hurja
+    Set Tagit  aika hurjia juttuja
     Set Url  https://yle.fi
     Set Kommentit  kuuntele uudestaan
     Set Kuvaus  häröilyä
