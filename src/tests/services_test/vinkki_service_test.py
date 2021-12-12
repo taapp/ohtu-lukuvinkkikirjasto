@@ -17,10 +17,10 @@ class TestVinkkiService(unittest.TestCase):
     def setUp(self) -> None:
         self.vinkki_service = VinkkiService(FakeLukuvinkkiRepository())
 
-    def test_create_user(self):
-        user = self.vinkki_service.create_user(1, 'kalle', 'passu')
-        self.assertEqual(user.__str__(), f"username: kalle, id: {1}")
-        self.assertEqual(user.password, 'passu')
+#    def test_create_user(self):
+#        user = self.vinkki_service.create_user(1, 'kalle', 'passu')
+#        self.assertEqual(user.__str__(), f"username: kalle, id: {1}")
+#        self.assertEqual(user.password, 'passu')
 
     def test_create_vinkki_podcast(self):
         vinkki = self.vinkki_service.create_vinkki("podcast", "Podcastin nimi tässä", "Pertti Podaaja", url="www.osoite.fi", tagit="verkot, lifestyle, sijoittaminen")
