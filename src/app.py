@@ -5,6 +5,9 @@ from entities.lukuvinkki import Lukuvinkki
 from entities.lukuvinkkilista import Lukuvinkkilista
 from entities.users import Users
 from services.vinkki_service import vinkki_service
+#lisätty user importit
+from entities.user import User
+from services.user_service import user_service
 
 app = Flask(__name__)
 
@@ -96,6 +99,13 @@ def handle_register():
     username = request.form.get("username")
     password = request.form.get("password")
     password_confirmation = request.form.get("password_confirmation")
+# lisätty rekisteröinnin yritys    
+    try:
+        user_service.create_user(username, password, password_confirmation)
+        return redirect_to_add_subject()
+    except Exception as error:
+        flash(str(error))
+        return redirect_to_home()
 
 @app.route("/logout")
 def logout():

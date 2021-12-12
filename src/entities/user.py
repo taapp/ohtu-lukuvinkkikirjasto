@@ -1,8 +1,7 @@
 class User:
-    def __init__(self, id, username, password) -> None:
-        self.id = id
+    def __init__(self, username, password):
         self.username = username
         self.password = password
 
     def __str__(self):
-        return f"username: {self.username}, id: {self.id}"
+        return f"username: {self.username}"
