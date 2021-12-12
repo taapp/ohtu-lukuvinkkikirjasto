@@ -28,12 +28,7 @@ class VinkkiService:
 #    def listaa_vinkit(self):
 #        self.vinkkilista.listaa()
 
-    def listaa_lukuvinkit(self):
-        return self._lukuvinkki_repository.hae_vinkit()
-
     def palauta_lista(self):
-        #return self.vinkkilista.palauta_lista()
-        #return self._lukuvinkki_repository.hae_vinkit()
-        return self.listaa_lukuvinkit()
+        return self._lukuvinkki_repository.hae_vinkit()
 
 vinkki_service = VinkkiService()

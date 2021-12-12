@@ -38,3 +38,4 @@ HUOM! 2. sprintin releasessa ei vielä ole rekisteröitymistoimintoa. Kirjaudutt
 
 ### Definition of Done
 User story toimii backlogin hyväksymiskriteereiden mukaan ja sille on toteutettu automaattisia testejä vähintään kyseisen storyn tärkeimmille ominaisuuksille.
+
