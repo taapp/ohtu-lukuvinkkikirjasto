@@ -77,7 +77,7 @@ def login():
     if (user.get_password(username) == password):
         login_user(user)
         return render_list()
-    if not user:
+    elif (user.get_password(username) != password):
         return render_template("login.html", error = "Väärä tunnus tai salasana!")
 
 @app.route("/list", methods=["GET", "POST"])
