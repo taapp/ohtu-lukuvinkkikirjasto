@@ -94,6 +94,14 @@ def render_register():
 def render_add_subject():
     return render_template("add_subject.html")
 
+#ei vielä toimi, puuttuu vinkin spesifiointi
+@app.route("/modify_subject/<subject_name>", methods=["GET"])
+@login_required
+def render_modify_subject(otsikko):
+    #palauta vinkki tähän (servicessä ei vielä metodia hakuun!)
+    #vinkin attribuutit sitten parametrina html-näkymään
+    return render_template("modify_subject.html", subject_name = otsikko)
+
 @app.route("/register", methods=["POST"])
 def handle_register():
     username = request.form.get("username")
@@ -131,3 +139,21 @@ def add_subject():
         flash(str(error))
         return redirect_to_home()
 
+#ei vielä toiminnassa! odottaa hakumetodia
+@app.route("/modify_subject/<subject_name>", methods=["GET", "POST"])
+@login_required
+def modify_subject():
+    otsikko = request.form.get("otsikko")
+    kirjailija = request.form.get("kirjailija")
+    isbn = request.form.get("isbn")
+    tagit = request.form.get("tagit")
+    url = request.form.get("url")
+    kommentti = request.form.get("kommentti")
+    kuvaus = request.form.get("kuvaus")
+    kurssit = request.form.get("kurssit")
+    try:
+        vinkki_service.muokkaa_vinkkia(otsikko, kirjailija, isbn, tagit, url, kommentti, kuvaus, kurssit)
+        return render_list()
+    except Exception as error:
+        flash(str(error))
+        return redirect_to_home()
