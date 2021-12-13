@@ -109,7 +109,7 @@ def handle_register():
     password_confirmation = request.form.get("password_confirmation")
 # lisätty rekisteröinnin yritys    
     try:
-        user_service.create_user(username, password, password_confirmation)
+        user_service.add_user_to_userlist(user_service.create_user(username, password))
         return redirect_to_add_subject()
     except Exception as error:
         flash(str(error))

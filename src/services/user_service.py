@@ -20,12 +20,12 @@ class UserService:
             raise ExistingUserError(f"Tunnus on jo käytössä.")
 
         self.validate(username, password, password_confirmation)
-        user = self._user_repository.create(
-            User(username, password)
-        )
         
-        return user
+        return User(username, password)
 
+    def add_user_to_userlist(self, user):
+        self._user_repository.create(user)
+    
 
     def validate(self, username, password, password_confirmation):
         if not username or not password:
