@@ -31,6 +31,9 @@ class VinkkiService:
     def listaa_lukuvinkit(self):
         return self._lukuvinkki_repository.hae_vinkit()
 
+    def muokkaa_vinkkia(self, otsikko, kirjailija, isbn, tagit, url, kommentti, kuvaus, kurssit):
+        self._lukuvinkki_repository.muokkaa_vinkkia(otsikko, kirjailija, isbn, tagit, url, kommentti, kuvaus, kurssit)
+
     def palauta_lista(self):
         #return self.vinkkilista.palauta_lista()
         #return self._lukuvinkki_repository.hae_vinkit()

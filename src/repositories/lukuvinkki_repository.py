@@ -32,4 +32,14 @@ class LukuvinkkiRepository:
 
         return list(map(get_vinkki_by_row, rows))
 
+    #lukuvinkin muokkaus, ei vielä kokeiltu
+    def muokkaa_vinkkia(self, otsikko, kirjailija, isbn, tagit, url, kommentti, kuvaus, kurssit):
+        cursor = self._connection.cursor()
+        cursor.execute(
+            'update vinkit set (otsikko, kirjailija, isbn, tagit, url, kommentti, kuvaus, kurssit) values (?, ?, ?, ?, ?, ?, ?, ?)', 
+            (otsikko, kirjailija, isbn, tagit, url, kommentti, kuvaus, kurssit))
+
+        self._connection.commit()
+
+
 lukuvinkki_repository = LukuvinkkiRepository(get_database_connection())
