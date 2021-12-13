@@ -6,14 +6,30 @@ from repositories.lukuvinkki_repository import (
 	lukuvinkki_repository as default_lukuvinkki_repository
 )
 
+from repositories.user_repository import (
+    user_repository as default_user_repository
+)
+
+class UserInputError(Exception):
+    pass
+
+class ExistingUserError(Exception):
+    pass
+
 class VinkkiService:
-    def __init__(self, lukuvinkki_repository=default_lukuvinkki_repository):
+    def __init__(self, lukuvinkki_repository=default_lukuvinkki_repository, user_repository=default_user_repository):
         self.users = []
         #self.vinkkilista = Lukuvinkkilista()
+        self._user = None
         self._lukuvinkki_repository = lukuvinkki_repository
+        self._user_repository = user_repository
 
-#    def create_user(self, id, username, password): # pylint: disable invalid-name
-#        return User(id, username, password) # pylint: disable invalid-name
+    def create_user(self, username, password):
+        return User(username, password)
+    
+    def add_user_to_userlist(self, user):
+        self._user_repository.create(user)
+    
 
     def create_vinkki(self, tyyppi, otsikko, kirjailija, isbn=None, tagit=None, url=None,
                         kommentti=None, kuvaus=None, kurssit=None, luettu=False):
