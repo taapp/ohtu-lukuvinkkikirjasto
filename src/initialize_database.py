@@ -25,8 +25,7 @@ def create_users_table(connection):
     cursor = connection.cursor()
     cursor.execute('''
         create table users (
-            id integer PRIMARY KEY,
-            name TEXT NOT NULL UNIQUE,
+            username TEXT PRIMARY KEY,
             password TEXT NOT NULL
         );
     ''')
