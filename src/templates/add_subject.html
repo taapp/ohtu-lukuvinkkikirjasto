@@ -16,11 +16,10 @@
     <ul>
       <li><a href="/logout">Kirjaudu ulos</a></li>
     </ul>
-    <div class="container p-3 my-3 border">
+    <div class="container">
       <h1>Lisää lukuvinkki</h1>
       <br>
       <form action="" method="post">
-        <!--<fieldset>-->
           <legend>Valitse tyyppi</legend>
     
             <input type="radio" onclick="showIsbn();" id="kirja" name="tyyppi" value="kirja">
@@ -37,7 +36,6 @@
 
             <input type="radio" onclick="hideIsbn();" id="muu" name="tyyppi" value="muu">
             <label for="muu">Muu</label><br/>
-       <!-- </fieldset> -->
          <input type="text" placeholder="Otsikko" name="otsikko" id="otsikko"><br>
          <input type="text" placeholder="Tekijä" name="kirjailija" id="kirjailija"><br>
          <input style="display: none;" type="text" placeholder="ISBN" name="isbn" id="isbn"><br>
@@ -46,7 +44,6 @@
          <input type="text" placeholder="Kommentit" name="kommentit" id="kommentit"><br>
          <input type="text" placeholder="Kuvaus" name="kuvaus" id="kuvaus"><br>
          <input type="text" placeholder="Liittyvät kurssit" name="kurssit" id="kurssit"><br>
-         <div></div>
           <input type="checkbox" id="yksityinen" name="yksityinen"
                  checked>
           <label for="yksityinen">Yksityinen lukuvinkki</label>
@@ -54,6 +51,7 @@
          <button>
             Lisää
           </button>
+          </div>
       </form>
       {% if error %}
         <p class="error"><strong>Virhe:</strong> {{ error }}
