@@ -5,9 +5,9 @@ from entities.lukuvinkki import Lukuvinkki
 from entities.lukuvinkkilista import Lukuvinkkilista
 from entities.users import Users
 from services.vinkki_service import vinkki_service
-#lisätty user importit
+#lisätty user importti
 from entities.user import User
-from services.user_service import user_service
+
 
 app = Flask(__name__)
 
@@ -109,7 +109,7 @@ def handle_register():
     password_confirmation = request.form.get("password_confirmation")
 # lisätty rekisteröinnin yritys    
     try:
-        user_service.add_user_to_userlist(user_service.create_user(username, password))
+        vinkki_service.add_user_to_userlist(vinkki_service.create_user(username, password))
         return redirect_to_add_subject()
     except Exception as error:
         flash(str(error))
