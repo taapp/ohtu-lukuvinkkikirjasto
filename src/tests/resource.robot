@@ -4,8 +4,8 @@ Library  ../AppLibrary.py
 
 *** Variables ***
 ${SERVER}  localhost:5000
-#${BROWSER}  headlesschrome
-${BROWSER}  chrome
+${BROWSER}  headlesschrome
+#${BROWSER}  chrome
 ${DELAY}  0.1 seconds
 #${DELAY}  0.5 seconds
 ${HOME URL}  http://${SERVER}
