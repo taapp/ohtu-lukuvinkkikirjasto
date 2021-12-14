@@ -3,7 +3,7 @@ from database_connection import get_database_connection
 
 def get_vinkki_by_row(row):
     return Lukuvinkki(row["tyyppi"], row["otsikko"], row["kirjailija"], row["isbn"], row["tagit"],
-        row["url"], row["kommentti"], row["kuvaus"], row["kurssit"], row["luettu"]) if row else None
+        row["url"], row["kommentti"], row["kuvaus"], row["kurssit"], row["luettu"], row["username"]) if row else None
 
 class LukuvinkkiRepository:
     def __init__(self, connection):
@@ -15,8 +15,8 @@ class LukuvinkkiRepository:
         print("LukuvinkkiRepository, create-metodi")
         cursor.execute(
             #'insert into lukuvinkit (tyyppi, otsikko, kirjailija, isbn, tagit, url, kommentti, kuvaus, kurssit, luettu) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
-            'insert into vinkit (tyyppi, otsikko, kirjailija, isbn, tagit, url, kommentti, kuvaus, kurssit, luettu) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
-            (lukuvinkki.tyyppi, lukuvinkki.otsikko, lukuvinkki.kirjailija, lukuvinkki.isbn, lukuvinkki.tagit, lukuvinkki.url, lukuvinkki.kommentti, lukuvinkki.kuvaus, lukuvinkki.kurssit, lukuvinkki.luettu)
+            'insert into vinkit (tyyppi, otsikko, kirjailija, isbn, tagit, url, kommentti, kuvaus, kurssit, luettu, username) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+            (lukuvinkki.tyyppi, lukuvinkki.otsikko, lukuvinkki.kirjailija, lukuvinkki.isbn, lukuvinkki.tagit, lukuvinkki.url, lukuvinkki.kommentti, lukuvinkki.kuvaus, lukuvinkki.kurssit, lukuvinkki.luettu, lukuvinkki.username)
 
         )
 
