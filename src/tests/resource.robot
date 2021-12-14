@@ -4,8 +4,8 @@ Library  ../AppLibrary.py
 
 *** Variables ***
 ${SERVER}  localhost:5000
-${BROWSER}  headlesschrome
-#${BROWSER}  chrome
+#${BROWSER}  headlesschrome
+${BROWSER}  chrome
 ${DELAY}  0.1 seconds
 #${DELAY}  0.5 seconds
 ${HOME URL}  http://${SERVER}
@@ -51,7 +51,7 @@ Go To Login Page
     Go To  ${LOGIN URL}
 
 Go To Register Page
-    Go To ${REGISTER URL}
+    Go To  ${REGISTER URL}
 
 Go To Logout Page
     Go To  ${LOGOUT_URL}
