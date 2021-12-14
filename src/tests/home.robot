@@ -119,12 +119,12 @@ Data Is Saved Succeed
     Page Should Contain  Noksu kulkee ja keksii
     
 #register ei tee mitään sillä rekisteröitymistä ei ole toteutettu vielä
-Register
-    Go To Register Page
-    Set Nimimerkki  moro
-    Set Salasana  tietoturva
-    Input Text  password_confirmation  tietoturva
-    Click Button  Rekisteröidy
+#Register
+#    Go To Register Page
+#    Set Nimimerkki  moro
+#    Set Salasana  tietoturva
+#    Input Text  password_confirmation  tietoturva
+#    Click Button  Rekisteröidy
 
 Login
     Go To Login Page

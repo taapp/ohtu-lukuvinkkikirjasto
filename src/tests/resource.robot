@@ -51,7 +51,7 @@ Go To Login Page
     Go To  ${LOGIN URL}
 
 Go To Register Page
-    Go To ${REGISTER URL}
+    Go To  ${REGISTER URL}
 
 Go To Logout Page
     Go To  ${LOGOUT_URL}
