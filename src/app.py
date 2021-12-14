@@ -60,9 +60,8 @@ def render_login():
 
 @login_manager.user_loader
 def load_user(username):
-    user_entry = Users.get(username)
-    if (user_entry is not None):
-        user = Users(user_entry[0],user_entry[0],user_entry[1])
+    user = vinkki_service.get_user(username)
+    if (user is not None):
         return user
     return None
 
@@ -75,11 +74,11 @@ def login():
 
     if not user:
         return render_template("login.html", error = "Väärä tunnus tai salasana!")
-    if (user.get_password(username) == password):
+    if (user.get_password() == password):
         login_user(user)
         vinkki_service._user = current_user
         return render_list()
-    elif (user.get_password(username) != password):
+    elif (user.get_password() != password):
         return render_template("login.html", error = "Väärä tunnus tai salasana!")
 
 @app.route("/list", methods=["GET", "POST"])

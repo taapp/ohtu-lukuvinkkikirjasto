@@ -29,8 +29,10 @@ class VinkkiService:
     
     def add_user_to_userlist(self, user):
         self._user_repository.create(user)
-    
 
+    def get_user(self, username):
+        return self._user_repository.find_username(username)
+    
     def create_vinkki(self, tyyppi, otsikko, kirjailija, isbn=None, tagit=None, url=None,
                         kommentti=None, kuvaus=None, kurssit=None, luettu=False):
 
