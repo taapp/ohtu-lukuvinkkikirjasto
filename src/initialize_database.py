@@ -1,14 +1,5 @@
 from database_connection import get_database_connection
 
-def create_int_generator(i_start=0):
-    i = i_start
-    while True:
-        yield i
-        i += 1
-
-generator_user_id = create_int_generator()
-generator_vinkki_id = create_int_generator()
-
 def drop_tables(connection):
     cursor = connection.cursor()
 
@@ -58,9 +49,9 @@ def create_tables(connection):
 
 def insert_default_data(connection):
     cursor = connection.cursor()
-    sql_users = """INSERT INTO users(id, name, password) VALUES (?,?,?)"""
-    cursor.execute(
-        sql_users, [next(generator_user_id), "user", "passu"])
+    sql_users = """INSERT INTO users(username, password) VALUES (?,?)"""
+    cursor.execute(sql_users, ["tunnus", "passu"])
+    cursor.execute(sql_users, ["kayttaja", "salasana"])
     sql_vinkit = 'insert into vinkit (tyyppi, otsikko, kirjailija, isbn, tagit, url, kommentti, kuvaus, kurssit, luettu) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
     cursor.execute(sql_vinkit, ["kirja", "Sinuhe Egyptiläinen", "Mika Waltari", "11111-22222", "","","Yksi lempikirjoistani!","","",""])
     connection.commit()

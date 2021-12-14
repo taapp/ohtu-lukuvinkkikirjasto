@@ -68,6 +68,7 @@ def load_user(username):
 
 @app.route("/login", methods = ["GET", "POST"])
 def login():
+    print("kutsutaan login")
     username = request.form.get("username")
     password = request.form.get("password")
     user = load_user(username)
@@ -104,16 +105,19 @@ def render_modify_subject(otsikko):
 
 @app.route("/register", methods=["POST"])
 def handle_register():
+    print("kutsutaan handle_register")
     username = request.form.get("username")
     password = request.form.get("password")
     password_confirmation = request.form.get("password_confirmation")
-# lisätty rekisteröinnin yritys    
-    try:
-        vinkki_service.add_user_to_userlist(vinkki_service.create_user(username, password))
-        return redirect_to_add_subject()
-    except Exception as error:
-        flash(str(error))
-        return redirect_to_home()
+    # lisätty rekisteröinnin yritys
+    vinkki_service.add_user_to_userlist(vinkki_service.create_user(username, password))
+    return redirect_to_home()
+    #try:
+    #    vinkki_service.add_user_to_userlist(vinkki_service.create_user(username, password))
+    #    return redirect_to_home()
+    #except Exception as error:
+    #    flash(str(error))
+    #    return redirect_to_home()
 
 @app.route("/logout")
 def logout():
@@ -123,6 +127,7 @@ def logout():
 @app.route("/add_subject", methods=["GET", "POST"])
 @login_required
 def add_subject():
+    print("kutsutaan add_subject")
     tyyppi = request.form.get("tyyppi")
     otsikko = request.form.get("otsikko")
     kirjailija = request.form.get("kirjailija")
