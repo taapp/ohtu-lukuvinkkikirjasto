@@ -77,6 +77,7 @@ def login():
         return render_template("login.html", error = "Väärä tunnus tai salasana!")
     if (user.get_password(username) == password):
         login_user(user)
+        vinkki_service._user = current_user
         return render_list()
     elif (user.get_password(username) != password):
         return render_template("login.html", error = "Väärä tunnus tai salasana!")
@@ -84,7 +85,8 @@ def login():
 @app.route("/list", methods=["GET", "POST"])
 @login_required
 def render_list():
-    return render_template("list.html", lista=vinkki_service.palauta_lista())
+    #return render_template("list.html", lista=vinkki_service.palauta_lista())
+    return render_template("list.html", lista=vinkki_service.palauta_lista_user_current())
 
 @app.route("/register", methods=["GET"])
 def render_register():
@@ -128,6 +130,7 @@ def logout():
 @login_required
 def add_subject():
     print("kutsutaan add_subject")
+    print(current_user)
     tyyppi = request.form.get("tyyppi")
     otsikko = request.form.get("otsikko")
     kirjailija = request.form.get("kirjailija")

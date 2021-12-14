@@ -55,4 +55,16 @@ class VinkkiService:
         #return self._lukuvinkki_repository.hae_vinkit()
         return self.listaa_lukuvinkit()
 
+
+    def palauta_lista_user_current(self):
+        """Toimintaperiaate: Haetaan tietokannasta kaikki vinkit. Sen jälkeen suodatetaan vinkit, 
+        ja jätetään jäljelle vain ne vinkit, joiden username vastaa servicen _user:n username tai
+        joiden username on None (eli kaikille näkyvät vinkit)"""
+        if self._user is None:
+            raise Exception("Yritetään palauttaa lista vaikka _user==None !")
+        print(f"vinkki_service, palauta_lista_user_current-metodi, _user={self._user}")
+        vinkit = self.listaa_lukuvinkit()
+        vinkit_filtered = [v for v in vinkit if v.username in (self._user.username, None)]
+        return vinkit_filtered
+
 vinkki_service = VinkkiService()

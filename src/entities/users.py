@@ -36,3 +36,5 @@ class Users(UserMixin):
     def get(cls, id):
         return cls.user_database.get(id)
 
+    def __str__(self):
+        return f"id: {self.id}, username: {self.username}, password: {self.password}"
