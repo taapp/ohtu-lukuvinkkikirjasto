@@ -128,8 +128,8 @@ def logout():
 @app.route("/add_subject", methods=["GET", "POST"])
 @login_required
 def add_subject():
-    print("kutsutaan add_subject")
-    print(current_user)
+    #print("kutsutaan add_subject")
+    #print(current_user)
     tyyppi = request.form.get("tyyppi")
     otsikko = request.form.get("otsikko")
     kirjailija = request.form.get("kirjailija")
@@ -139,8 +139,11 @@ def add_subject():
     kommentti = request.form.get("kommentti")
     kuvaus = request.form.get("kuvaus")
     kurssit = request.form.get("kurssit")
+    yksityinen = request.form.get("yksityinen")
+    username = current_user.username if yksityinen is not None else None
+    #print(f"add_subject, username: {username}, type(username): {type(username)}")
     try:
-        vinkki_service.add_vinkki_to_vinkkilista(vinkki_service.create_vinkki(tyyppi, otsikko, kirjailija, isbn, tagit, url, kommentti, kuvaus, kurssit))
+        vinkki_service.add_vinkki_to_vinkkilista(vinkki_service.create_vinkki(tyyppi, otsikko, kirjailija, isbn, tagit, url, kommentti, kuvaus, kurssit, username=username))
         return render_list()
     except Exception as error:
         flash(str(error))

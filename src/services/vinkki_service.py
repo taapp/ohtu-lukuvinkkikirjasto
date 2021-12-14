@@ -34,10 +34,9 @@ class VinkkiService:
         return self._user_repository.find_username(username)
     
     def create_vinkki(self, tyyppi, otsikko, kirjailija, isbn=None, tagit=None, url=None,
-                        kommentti=None, kuvaus=None, kurssit=None, luettu=False):
-
+                        kommentti=None, kuvaus=None, kurssit=None, luettu=False, username=None):
         return Lukuvinkki(tyyppi, otsikko, kirjailija, isbn, tagit, url, kommentti,
-                kuvaus, kurssit, luettu)
+                kuvaus, kurssit, luettu, username)
 
     def add_vinkki_to_vinkkilista(self, vinkki):
         #self.vinkkilista.lisaa(vinkki)
