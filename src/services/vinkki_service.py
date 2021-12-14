@@ -68,4 +68,7 @@ class VinkkiService:
         vinkit_filtered = [v for v in vinkit if v.username in (self._user.username, None)]
         return vinkit_filtered
 
+    def hae_vinkkia(self, haku):
+        return self._lukuvinkki_repository.hae_vinkkia(haku)
+
 vinkki_service = VinkkiService()

@@ -167,3 +167,9 @@ def modify_subject():
     except Exception as error:
         flash(str(error))
         return redirect_to_home()
+
+#Tein tänne "testi" sivun jolla testailin mitä käy milloinkin
+@app.route("/testi", methods=["GET", "POST"])
+@login_required
+def render_list_for_testing():
+    return render_template("list.html", lista=vinkki_service.hae_vinkkia("star"))

@@ -8,7 +8,7 @@ def get_vinkki_by_row(row):
 class LukuvinkkiRepository:
     def __init__(self, connection):
         self._connection = connection
-
+        self.haku = "Sinuhe"
     
     def create(self, lukuvinkki):
         cursor = self._connection.cursor()
@@ -27,6 +27,15 @@ class LukuvinkkiRepository:
     def hae_vinkit(self):
         cursor = self._connection.cursor()
         cursor.execute('select * from vinkit')
+
+        rows = cursor.fetchall()
+
+        return list(map(get_vinkki_by_row, rows))
+
+    def hae_vinkkia(self, haku):
+        cursor = self._connection.cursor()
+        oikea_haku = f"%{haku}%"
+        cursor.execute("SELECT * FROM vinkit WHERE otsikko LIKE ?", (oikea_haku,))
 
         rows = cursor.fetchall()
 
