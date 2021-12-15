@@ -41,12 +41,20 @@ class LukuvinkkiRepository:
 
         return list(map(get_vinkki_by_row, rows))
 
+    def palauta_vinkki(self, otsikko):
+        cursor = self._connection.cursor()
+        cursor.execute("SELECT * FROM vinkit WHERE otsikko = ?", (otsikko,))
+
+        row = cursor.fetchall()
+
+        return get_vinkki_by_row(row)
+
     #lukuvinkin muokkaus, ei vielä kokeiltu
     def muokkaa_vinkkia(self, vanhaotsikko, otsikko, kirjailija, isbn, tagit, url, kommentti, kuvaus, kurssit):
         cursor = self._connection.cursor()
         cursor.execute(
-            'update vinkit set (otsikko, kirjailija, isbn, tagit, url, kommentti, kuvaus, kurssit) values (?, ?, ?, ?, ?, ?, ?, ?) where otsikko = ?', 
-            (otsikko, kirjailija, isbn, tagit, url, kommentti, kuvaus, kurssit, vanhaotsikko)
+            'update vinkit set otsikko=?, kirjailija=?, isbn=?, tagit=?, url=?, kommentti=?, kuvaus=?, kurssit=? where otsikko = ?', 
+            (otsikko, kirjailija, isbn, tagit, url, kommentti, kuvaus, kurssit, vanhaotsikko,)
             )
 
         self._connection.commit()
