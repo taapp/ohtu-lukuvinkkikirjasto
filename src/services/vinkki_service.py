@@ -48,8 +48,9 @@ class VinkkiService:
     def listaa_lukuvinkit(self):
         return self._lukuvinkki_repository.hae_vinkit()
 
-    def muokkaa_vinkkia(self, otsikko, kirjailija, isbn, tagit, url, kommentti, kuvaus, kurssit):
-        self._lukuvinkki_repository.muokkaa_vinkkia(otsikko, kirjailija, isbn, tagit, url, kommentti, kuvaus, kurssit)
+    def muokkaa_vinkkia(self, vanhaotsikko, otsikko, kirjailija, isbn, tagit, url, kommentti, kuvaus, kurssit):
+        print("pääsit tänne asti")
+        self._lukuvinkki_repository.muokkaa_vinkkia(vanhaotsikko, otsikko, kirjailija, isbn, tagit, url, kommentti, kuvaus, kurssit)
 
     def palauta_lista(self):
         #return self.vinkkilista.palauta_lista()

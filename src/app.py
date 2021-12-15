@@ -97,12 +97,12 @@ def render_add_subject():
     return render_template("add_subject.html")
 
 #ei vielä toimi, puuttuu vinkin spesifiointi
-@app.route("/modify_subject/<subject_name>", methods=["GET"])
+@app.route("/modify_subject<subject_name>", methods=["GET"])
 @login_required
-def render_modify_subject(otsikko):
+def render_modify_subject(subject_name):
     #palauta vinkki tähän (servicessä ei vielä metodia hakuun!)
     #vinkin attribuutit sitten parametrina html-näkymään
-    return render_template("modify_subject.html", subject_name = otsikko)
+    return render_template("modify_subject.html", subject_name = subject_name)
 
 @app.route("/register", methods=["POST"])
 def handle_register():
@@ -150,9 +150,10 @@ def add_subject():
         return redirect_to_home()
 
 #ei vielä toiminnassa! odottaa hakumetodia
-@app.route("/modify_subject/<subject_name>", methods=["GET", "POST"])
+@app.route("/modify_subject<subject_name>", methods=["GET", "POST"])
 @login_required
-def modify_subject():
+def modify_subject(subject_name):
+    vanhaotsikko = subject_name
     otsikko = request.form.get("otsikko")
     kirjailija = request.form.get("kirjailija")
     isbn = request.form.get("isbn")
@@ -162,7 +163,7 @@ def modify_subject():
     kuvaus = request.form.get("kuvaus")
     kurssit = request.form.get("kurssit")
     try:
-        vinkki_service.muokkaa_vinkkia(otsikko, kirjailija, isbn, tagit, url, kommentti, kuvaus, kurssit)
+        vinkki_service.muokkaa_vinkkia(vanhaotsikko, otsikko, kirjailija, isbn, tagit, url, kommentti, kuvaus, kurssit)
         return render_list()
     except Exception as error:
         flash(str(error))
