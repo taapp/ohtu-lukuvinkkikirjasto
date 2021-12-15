@@ -38,6 +38,9 @@
              <td>{{lukuvinkki.kommentti}}</td>
              <td>{{lukuvinkki.kuvaus}}</td>
              <td>{{lukuvinkki.kurssit}}</td> 
+             <td>
+               <li><a href="{{ url_for('render_modify_subject', subject_name=lukuvinkki.otsikko) }}">Muokkaa lukuvinkkiä</a>
+             </td>
           </tr>
         {% endfor %}
         <ul>
