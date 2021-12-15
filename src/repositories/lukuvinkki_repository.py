@@ -47,7 +47,7 @@ class LukuvinkkiRepository:
 
         row = cursor.fetchall()
 
-        return get_vinkki_by_row(row)
+        return list(map(get_vinkki_by_row, row))
 
     #lukuvinkin muokkaus, ei vielä kokeiltu
     def muokkaa_vinkkia(self, vanhaotsikko, otsikko, kirjailija, isbn, tagit, url, kommentti, kuvaus, kurssit):

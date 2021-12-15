@@ -100,9 +100,15 @@ def render_add_subject():
 @app.route("/modify_subject<subject_name>", methods=["GET"])
 @login_required
 def render_modify_subject(subject_name):
-    #palauta vinkki tähän (servicessä ei vielä metodia hakuun!)
-    #vinkin attribuutit sitten parametrina html-näkymään
-    return render_template("modify_subject.html", subject_name = subject_name)
+    vinkki = vinkki_service.palauta_vinkki(subject_name)[0]
+    return render_template("modify_subject.html", otsikko = vinkki.palauta_otsikko(), 
+        kirjailija = vinkki.palauta_kirjailija(), 
+        isbn = vinkki.palauta_isbn(), 
+        tagit = vinkki.palauta_tagit(), 
+        url = vinkki.palauta_url(), 
+        kommentti = vinkki.palauta_kommentti(), 
+        kuvaus = vinkki.palauta_kuvaus(), 
+        kurssit = vinkki.palauta_kurssit())
 
 @app.route("/register", methods=["POST"])
 def handle_register():

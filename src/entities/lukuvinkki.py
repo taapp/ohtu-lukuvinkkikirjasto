@@ -15,5 +15,29 @@ class Lukuvinkki:
     def merkitse_luetuksi(self):
         self.luettu = True
 
+    def palauta_otsikko(self):
+        return self.otsikko
+
+    def palauta_kirjailija(self):
+        return self.kirjailija
+
+    def palauta_isbn(self):
+        return self.isbn
+
+    def palauta_tagit(self):
+        return self.tagit
+    
+    def palauta_kommentti(self):
+        return self.kommentti
+    
+    def palauta_kuvaus(self):
+        return self.kuvaus
+
+    def palauta_kurssit(self):
+        return self.kurssit
+
+    def palauta_url(self):
+        return self.url
+
     def __str__(self):
         return self.otsikko + ", kirjailija: " + self.kirjailija + ", ISBN: " + str(self.isbn) + ", URL: " + str(self.url) + ", tagit: " + str(self.tagit) + ", kuvaus: " + str(self.kuvaus) + ", kommentit: " + str(self.kommentti) + ", luettu: " + str(self.luettu) + ", username: " + str(self.username)

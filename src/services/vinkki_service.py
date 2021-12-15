@@ -49,7 +49,6 @@ class VinkkiService:
         return self._lukuvinkki_repository.hae_vinkit()
 
     def muokkaa_vinkkia(self, vanhaotsikko, otsikko, kirjailija, isbn, tagit, url, kommentti, kuvaus, kurssit):
-        print("pääsit tänne asti")
         self._lukuvinkki_repository.muokkaa_vinkkia(vanhaotsikko, otsikko, kirjailija, isbn, tagit, url, kommentti, kuvaus, kurssit)
 
     def palauta_lista(self):
@@ -57,6 +56,9 @@ class VinkkiService:
         #return self._lukuvinkki_repository.hae_vinkit()
         return self.listaa_lukuvinkit()
 
+    def palauta_vinkki(self, otsikko):
+        vinkki = self._lukuvinkki_repository.palauta_vinkki(otsikko)
+        return vinkki
 
     def palauta_lista_user_current(self):
         """Toimintaperiaate: Haetaan tietokannasta kaikki vinkit. Sen jälkeen suodatetaan vinkit, 

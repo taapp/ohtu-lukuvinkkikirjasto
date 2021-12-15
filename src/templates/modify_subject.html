@@ -20,17 +20,14 @@
       <h1>Lisää lukuvinkki</h1>
       <br>
       <form action="" method="post">
-         <input type="text" placeholder="Otsikko" name="otsikko" id="otsikko"><br>
-         <input type="text" placeholder="Tekijä" name="kirjailija" id="kirjailija"><br>
-         <input style="display: none;" type="text" placeholder="ISBN" name="isbn" id="isbn"><br>
-         <input type="text" placeholder="Tagit" name="tagit" id="tagit"><br>
-         <input type="text" placeholder="URL" name="url" id="url"><br>
-         <input type="text" placeholder="Kommentit" name="kommentit" id="kommentit"><br>
-         <input type="text" placeholder="Kuvaus" name="kuvaus" id="kuvaus"><br>
-         <input type="text" placeholder="Liittyvät kurssit" name="kurssit" id="kurssit"><br>
-         <input type="checkbox" id="yksityinen" name="yksityinen"
-                 checked>
-          <label for="yksityinen">Yksityinen lukuvinkki</label>
+         <input type="text" placeholder="Otsikko" name="otsikko" id="otsikko" value={{otsikko}}><br>
+         <input type="text" placeholder="Tekijä" name="kirjailija" id="kirjailija" value={{kirjailija}}><br>
+         <input style="display: none;" type="text" placeholder="ISBN" name="isbn" id="isbn" value={{isbn}}><br>
+         <input type="text" placeholder="Tagit" name="tagit" id="tagit" value={{tagit}}><br>
+         <input type="text" placeholder="URL" name="url" id="url" value={{url}}><br>
+         <input type="text" placeholder="Kommentit" name="kommentit" id="kommentit" value={{kommentti}}><br>
+         <input type="text" placeholder="Kuvaus" name="kuvaus" id="kuvaus" value={{kuvaus}}><br>
+         <input type="text" placeholder="Liittyvät kurssit" name="kurssit" id="kurssit" value={{kurssit}}><br>
           <div>
          <button>
             Muokkaa
