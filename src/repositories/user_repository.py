@@ -20,7 +20,6 @@ class UserRepository:
         return user
 
 
-
     def find_username(self, username):
         cursor = self._connection.cursor()
         cursor.execute(
@@ -30,5 +29,11 @@ class UserRepository:
 
         row = cursor.fetchone()
         return get_user_by_row(row)
+
+
+    def delete_users(self):
+        cursor = self._connection.cursor()
+        cursor.execute("delete from users")
+        self._connection.commit()
 
 user_repository = UserRepository(get_database_connection())
