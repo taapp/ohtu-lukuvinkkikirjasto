@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# alustetaan tietokanta
+poetry run python3 src/initialize_database.py
 # käynnistetään Flask-palvelin taustalle
 poetry run python3 src/index.py &
 
