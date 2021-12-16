@@ -60,6 +60,44 @@ Add Video With Valid Parameters
     Submit Details
     Add Video Should Succeed
 
+Add Private Book 
+    Login
+    Go To Add_subject Page
+    Set Tyyppi  kirja
+    Set Otsikko  Ajattelu nopeasti ja hitaasti
+    Set Kirjailija  Daniel Kahneman
+    Set Isbn  ${EMPTY}
+    Set Tagit  ${EMPTY}
+    Set Url  https://www.terracognita.fi/tuote/ajattelu-nopeasti-ja-hitaasti/
+    Set Kommentit  ${EMPTY}
+    Set Kuvaus  ${EMPTY}
+    Set Kurssit  ${EMPTY}
+    Set Yksityinen
+    Submit Details
+    Go To Logout Page
+    Login Other User
+    List Page Should Be Open
+    Page Should Not Contain  Ajattelu nopeasti ja hitaasti
+
+Add Public Book 
+    Login
+    Go To Add_subject Page
+    Set Tyyppi  kirja
+    Set Otsikko  Harry Potter
+    Set Kirjailija  J.K. Rowling
+    Set Isbn  ${EMPTY}
+    Set Tagit  ${EMPTY}
+    Set Url  ${EMPTY}
+    Set Kommentit  ${EMPTY}
+    Set Kuvaus  ${EMPTY}
+    Set Kurssit  ${EMPTY}
+    Set Julkinen
+    Submit Details
+    Go To Logout Page
+    Login Other User
+    List Page Should Be Open
+    Page Should Contain  Harry Potter
+
 See Reading List
     Go To List Page
     See Reading List Should Succeed
@@ -132,16 +170,22 @@ Login
     Set Salasana  passu
     Click Button  Kirjaudu
 
+Login Other User
+    Go To Login Page
+    Set Nimimerkki  kayttaja
+    Set Salasana  salasana
+    Click Button  Kirjaudu
+
 Submit Details
     Click Button  Lisää
 
 Set Nimimerkki
     [Arguments]  ${nimimerkki}
-    Input Text  username  ${LOGIN_NAME}
+    Input Text  username  ${nimimerkki}
 
 Set Salasana
     [Arguments]  ${salasana}
-    Input Text  password  ${PASSWORD}
+    Input Text  password  ${salasana}
 
 Set Tyyppi
     [Arguments]  ${tyyppi}
@@ -178,3 +222,9 @@ Set Kuvaus
 Set Kurssit
     [Arguments]  ${kurssit}
     Input Text  kurssit  ${kurssit}
+
+Set Yksityinen
+    Select Checkbox  yksityinen
+
+Set Julkinen
+    Unselect Checkbox  yksityinen
