@@ -1,12 +1,7 @@
 from flask import Flask, render_template, redirect, url_for, request, flash
 from flask_login import LoginManager, login_required, login_user, logout_user, current_user
 from functools import wraps
-from entities.lukuvinkki import Lukuvinkki
-from entities.lukuvinkkilista import Lukuvinkkilista
-from entities.users import Users
 from services.vinkki_service import vinkki_service
-#lisätty user importti
-from entities.user import User
 
 
 app = Flask(__name__)
@@ -84,7 +79,6 @@ def login():
 @app.route("/list", methods=["GET", "POST"])
 @login_required
 def render_list():
-    #return render_template("list.html", lista=vinkki_service.palauta_lista())
     return render_template("list.html", lista=vinkki_service.palauta_lista_user_current())
 
 @app.route("/register", methods=["GET"])
@@ -134,8 +128,6 @@ def logout():
 @app.route("/add_subject", methods=["GET", "POST"])
 @login_required
 def add_subject():
-    #print("kutsutaan add_subject")
-    #print(current_user)
     tyyppi = request.form.get("tyyppi")
     otsikko = request.form.get("otsikko")
     kirjailija = request.form.get("kirjailija")
@@ -147,7 +139,6 @@ def add_subject():
     kurssit = request.form.get("kurssit")
     yksityinen = request.form.get("yksityinen")
     username = current_user.username if yksityinen is not None else None
-    #print(f"add_subject, username: {username}, type(username): {type(username)}")
     try:
         vinkki_service.add_vinkki_to_vinkkilista(vinkki_service.create_vinkki(tyyppi, otsikko, kirjailija, isbn, tagit, url, kommentti, kuvaus, kurssit, username=username))
         return render_list()
