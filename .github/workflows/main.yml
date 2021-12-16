@@ -27,7 +27,7 @@ jobs:
         run: poetry run pylint --fail-under=3 src
       - name: Run Robot Framework tests
         run: bash run_robot_tests.sh
-        timeout-minutes: 2
+        timeout-minutes: 5
       - name: Coverage report
         run: poetry run coverage xml
       - name: Coverage report to Codecov
