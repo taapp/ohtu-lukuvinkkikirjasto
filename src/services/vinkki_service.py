@@ -1,5 +1,4 @@
 from entities.lukuvinkki import Lukuvinkki
-from entities.lukuvinkkilista import Lukuvinkkilista
 from entities.user import User
 
 from repositories.lukuvinkki_repository import (
@@ -19,7 +18,6 @@ class ExistingUserError(Exception):
 class VinkkiService:
     def __init__(self, lukuvinkki_repository=default_lukuvinkki_repository, user_repository=default_user_repository):
         self.users = []
-        #self.vinkkilista = Lukuvinkkilista()
         self._user = None
         self._lukuvinkki_repository = lukuvinkki_repository
         self._user_repository = user_repository
