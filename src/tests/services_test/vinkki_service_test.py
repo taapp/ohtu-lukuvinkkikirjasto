@@ -22,6 +22,10 @@ class TestVinkkiService(unittest.TestCase):
         self.assertEqual(user.__str__(), f"username: kalle")
         self.assertEqual(user.password, 'passu')
 
+    def test_get_user(self):
+        user = self.vinkki_service.create_user('kalle', 'passu')
+        self.assertEqual(user.__str__(), f"username: kalle")
+
     def test_create_vinkki_podcast(self):
         vinkki = self.vinkki_service.create_vinkki("podcast", "Podcastin nimi tässä", "Pertti Podaaja", url="www.osoite.fi", tagit="verkot, lifestyle, sijoittaminen")
         self.assertEqual(vinkki.__str__(), "Podcastin nimi tässä, kirjailija: Pertti Podaaja, ISBN: None, URL: www.osoite.fi, tagit: verkot, lifestyle, sijoittaminen, kuvaus: None, kommentit: None, luettu: False, username: None")
