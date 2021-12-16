@@ -18,6 +18,15 @@ class UserRepository:
         self._connection.commit()
 
         return user
+    
+    def delete(self, username):
+        cursor = self._connection.cursor()
+        cursor.execute(
+            'delete from users where username = ?',
+            (username,)
+        )
+        self._connection.commit()
+
 
 
     def find_username(self, username):

@@ -9,11 +9,11 @@ from repositories.user_repository import (
     user_repository as default_user_repository
 )
 
-class UserInputError(Exception):
-    pass
+#class UserInputError(Exception):
+#    pass
 
-class ExistingUserError(Exception):
-    pass
+#class ExistingUserError(Exception):
+#    pass
 
 class VinkkiService:
     def __init__(self, lukuvinkki_repository=default_lukuvinkki_repository, user_repository=default_user_repository):
@@ -37,11 +37,7 @@ class VinkkiService:
                 kuvaus, kurssit, luettu, username)
 
     def add_vinkki_to_vinkkilista(self, vinkki):
-        #self.vinkkilista.lisaa(vinkki)
         self._lukuvinkki_repository.create(vinkki)
-
-#    def listaa_vinkit(self):
-#        self.vinkkilista.listaa()
 
     def listaa_lukuvinkit(self):
         return self._lukuvinkki_repository.hae_vinkit()

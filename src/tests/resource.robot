@@ -38,6 +38,9 @@ List Page Should Be Open
 Login Page Should Be Open
     Title Should Be  Kirjaudu sisään
 
+Register Page Should Be Open
+    Title Should Be  Rekisteröidy
+
 Go To Main Page
     Go To  ${HOME URL}
 
