@@ -89,8 +89,7 @@ def render_register():
 @login_required
 def render_add_subject():
     return render_template("add_subject.html")
-
-#ei vielä toimi, puuttuu vinkin spesifiointi
+    
 @app.route("/modify_subject<subject_name>", methods=["GET"])
 @login_required
 def render_modify_subject(subject_name):
@@ -159,7 +158,6 @@ def add_subject():
         flash(str(error))
         return redirect_to_home()
 
-#ei vielä toiminnassa! odottaa hakumetodia
 @app.route("/modify_subject<subject_name>", methods=["GET", "POST"])
 @login_required
 def modify_subject(subject_name):
