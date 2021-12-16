@@ -184,10 +184,3 @@ def modify_subject(subject_name):
 def render_search():
     searchword = request.form.get("word")
     return render_template("list.html", lista=vinkki_service.hae_vinkkia(searchword))
-
-
-#Tein tänne "testi" sivun jolla testailin mitä käy milloinkin
-@app.route("/testi", methods=["GET", "POST"])
-@login_required
-def render_list_for_testing():
-    return render_template("list.html", lista=vinkki_service.hae_vinkkia("star"))
