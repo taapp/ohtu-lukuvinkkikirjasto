@@ -166,6 +166,13 @@ def modify_subject(subject_name):
         flash(str(error))
         return redirect_to_home()
 
+@app.route("/search", methods=["GET", "POST"])
+@login_required
+def render_search():
+    searchword = request.form.get("word")
+    return render_template("list.html", lista=vinkki_service.hae_vinkkia(searchword))
+
+
 #Tein tänne "testi" sivun jolla testailin mitä käy milloinkin
 @app.route("/testi", methods=["GET", "POST"])
 @login_required

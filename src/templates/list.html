@@ -9,9 +9,10 @@
         }
         </style>
     <div class="search-container">
-      <form action="/search.html">
-        <input type="text" placeholder="Hae vinkkejä" name="search">
-        <button type="submit">Etsi</button>
+      <form method="POST" class="form-inline mt-2 mt-md-0" name="search" action = "{{url_for('render_search')}}">
+
+        <input class="form-control mr-sm-2" type="text" name="word" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" >Etsi lukuvinkkejä</button></a>
       </form>
     </div>
     <tr>
