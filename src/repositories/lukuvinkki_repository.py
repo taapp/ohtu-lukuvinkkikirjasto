@@ -59,5 +59,9 @@ class LukuvinkkiRepository:
 
         self._connection.commit()
 
+    def poista_vinkit(self):
+        cursor = self._connection.cursor()
+        cursor.execute("delete from vinkit")
+        self._connection.commit()
 
 lukuvinkki_repository = LukuvinkkiRepository(get_database_connection())
