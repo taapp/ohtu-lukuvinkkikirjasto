@@ -2,7 +2,7 @@ from flask import Flask, render_template, redirect, url_for, request, flash
 from flask_login import LoginManager, login_required, login_user, logout_user, current_user
 from functools import wraps
 from services.vinkki_service import vinkki_service
-
+from repositories.user_repository import user_repository
 
 app = Flask(__name__)
 
@@ -89,8 +89,7 @@ def render_register():
 @login_required
 def render_add_subject():
     return render_template("add_subject.html")
-
-#ei vielä toimi, puuttuu vinkin spesifiointi
+    
 @app.route("/modify_subject<subject_name>", methods=["GET"])
 @login_required
 def render_modify_subject(subject_name):
@@ -110,15 +109,28 @@ def handle_register():
     username = request.form.get("username")
     password = request.form.get("password")
     password_confirmation = request.form.get("password_confirmation")
-    # lisätty rekisteröinnin yritys
+    
+    check_if_user = user_repository.find_username(username)
+
+    if check_if_user is not None:
+        return render_template("register.html", error = "Tunnus on jo käytössä")
+    
+    if password != password_confirmation:
+        return render_template("register.html", error = "Salasanat eivät täsmää")
+    
+    if not (username and password and password_confirmation):
+        return render_template("register.html", error = "Kaikki kentät on täytettävä")
+    
+    if len(password) < 4:
+        return render_template("register.html", error = "Salasanan pitää olla vähintään 5 merkkiä pitkä")
+
+    if len(username) < 3:
+        return render_template("register.html", error = "Käyttäjätunnuksen pitää olla vähintään 3 merkkiä pitkä")
+        
+    
     vinkki_service.add_user_to_userlist(vinkki_service.create_user(username, password))
+    
     return redirect_to_home()
-    #try:
-    #    vinkki_service.add_user_to_userlist(vinkki_service.create_user(username, password))
-    #    return redirect_to_home()
-    #except Exception as error:
-    #    flash(str(error))
-    #    return redirect_to_home()
 
 @app.route("/logout")
 def logout():
@@ -146,7 +158,6 @@ def add_subject():
         flash(str(error))
         return redirect_to_home()
 
-#ei vielä toiminnassa! odottaa hakumetodia
 @app.route("/modify_subject<subject_name>", methods=["GET", "POST"])
 @login_required
 def modify_subject(subject_name):
@@ -171,10 +182,3 @@ def modify_subject(subject_name):
 def render_search():
     searchword = request.form.get("word")
     return render_template("list.html", lista=vinkki_service.hae_vinkkia(searchword))
-
-
-#Tein tänne "testi" sivun jolla testailin mitä käy milloinkin
-@app.route("/testi", methods=["GET", "POST"])
-@login_required
-def render_list_for_testing():
-    return render_template("list.html", lista=vinkki_service.hae_vinkkia("star"))
