@@ -136,6 +136,16 @@ User Can Search Reading Tips With Title
     Searching Reading Tips Should Succeed
     Page Should Not Contain  Sinuhe
 
+User Can Modify Reading Tips
+    Login
+    Go To Modify Page
+    Set Kirjailija  Edgar Allan Poe
+    Set Otsikko  Korppi
+    Click Button  Muokkaa
+    List Page Should Be Open
+    Page Should Contain  Edgar Allan Poe
+    Page Should Contain  Korppi
+
 *** Keywords ***
 
 #Testaa tietojen syöttämistä

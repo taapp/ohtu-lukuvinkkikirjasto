@@ -14,6 +14,7 @@ ${REGISTER URL}  http://${SERVER}/register
 ${ADD_SUBJECT URL}  http://${SERVER}/add_subject
 ${LIST URL}  http://${SERVER}/list
 ${LOGOUT_URL}  http://${SERVER}/logout
+${MODIFY_URL}  http://${SERVER}/modify_subjectSinuhe Egyptiläinen
 ${LOGIN_NAME}  tunnus
 ${PASSWORD}  passu
 
@@ -58,3 +59,6 @@ Go To Register Page
 
 Go To Logout Page
     Go To  ${LOGOUT_URL}
+
+Go To Modify Page
+    Go To  ${MODIFY_URL}
