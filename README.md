@@ -8,6 +8,8 @@
 
 [2. sprintin release](https://github.com/taapp/ohtu-lukuvinkkikirjasto/releases/tag/sprint2)
 
+[3. sprintin release](https://github.com/taapp/ohtu-lukuvinkkikirjasto/releases/tag/sprint3)
+
 [Rekisteröitymisen Robot testit](https://github.com/taapp/ohtu-lukuvinkkikirjasto/blob/main/src/tests/register.robot)
 
 [Loput Robot testit](https://github.com/taapp/ohtu-lukuvinkkikirjasto/blob/main/src/tests/home.robot)
