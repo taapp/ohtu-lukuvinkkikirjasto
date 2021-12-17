@@ -31,7 +31,7 @@ Aja sen jälkeen komento, jolloin sovellus lähtee päälle.
 ```
 flask run
 ```
-Mene omavalintaisella selaimella komentorivillä näkyvään osoitteeseen, jossa sovelluksen nyt pitäisi näkyä.
+Mene omavalintaisella selaimella komentorivillä näkyvään osoitteeseen (tyypillisesti http://127.0.0.1:5000/), jossa sovelluksen nyt pitäisi näkyä.
 
 Ohjelmassa on kaksi käyttäjää, joilla voit kirjautua sisään:
 
@@ -43,3 +43,24 @@ Voit myös rekisteröityä sovellukseen omilla tunnuksilla.
 
 ### Definition of Done
 User story toimii backlogin hyväksymiskriteereiden mukaan ja sille on toteutettu automaattisia testejä vähintään kyseisen storyn tärkeimmille ominaisuuksille.
+
+### Yksikkötestien ajaminen
+Yksikkötestit voidaan ajaa komennolla
+```
+poetry run pytest
+```
+Testien ajaminen tuhoaa tietokannan taulujen sisällön. Tietokannan sisällön voi alustaa alkuperäiseksi ajamalla komennon (olettaen, että komento ajetaan src-hakemistossa)
+```
+poetry run python3 initialize_database.py
+```
+
+### Robot Framework -testien ajaminen
+Robot Framework -testien ajamiseksi tulee ensin alustaa tietokanta ajamalla komento (olettaen, että komento ajetaan src-hakemistossa)
+```
+poetry run python3 initialize_database.py
+```
+Tämän jälkeen tulee laittaa sovellus päälle (katso kohta "Ohjelman suorittaminen"). Robot framework -testit voidaan nyt ajaa suorittamalla komento (olettaen, että komento ajetaan src-hakemistossa)
+```
+poetry run robot tests
+```
+Testien suorittaminen tuottaa tietokantaan uutta sisältöä, jonka vuoksi voi olla suositeltavaa vielä alustaa tietokanta aiemmin annetulla komennolla.
