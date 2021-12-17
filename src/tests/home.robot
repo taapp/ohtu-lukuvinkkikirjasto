@@ -15,7 +15,7 @@ Add Book With Valid Parameters
     Set Isbn  951-0-32245-8
     Set Tagit  tärkeä
     Set Url  https://wsoy.fi
-    Set Kommentit  osta
+    Set Kommentti  osta
     Set Kuvaus  hyvä tenttikirja
     Set Kurssit  ohtu
     Submit Details
@@ -29,7 +29,7 @@ Add Blog Or Article With Valid Parameters
     Set Kirjailija  Seppo Papunen
     Set Tagit  paras
     Set Url  https://blogit.fi
-    Set Kommentit  jaa kavereille
+    Set Kommentti  jaa kavereille
     Set Kuvaus  hauska blogi
     Submit Details
     Add Blog Or Article Should Succeed
@@ -42,7 +42,7 @@ Add Podcast With Valid Parameters
     Set Kirjailija  Kari Hietalahti
     Set Tagit  aika hurjia juttuja
     Set Url  https://yle.fi
-    Set Kommentit  kuuntele uudestaan
+    Set Kommentti  kuuntele uudestaan
     Set Kuvaus  häröilyä
     Submit Details
     Add Podcast Should Succeed
@@ -55,7 +55,7 @@ Add Video With Valid Parameters
     Set Kirjailija  Los Gatos High School
     Set Tagit  mielenkiintoinen
     Set Url  https://www.youtube.com/watch?v=MTY1Kje0yLg
-    Set Kommentit  katso joskus
+    Set Kommentti  katso joskus
     Set Kuvaus  gravitaatio esitys
     Submit Details
     Add Video Should Succeed
@@ -69,7 +69,7 @@ Add Private Book
     Set Isbn  ${EMPTY}
     Set Tagit  ${EMPTY}
     Set Url  https://www.terracognita.fi/tuote/ajattelu-nopeasti-ja-hitaasti/
-    Set Kommentit  ${EMPTY}
+    Set Kommentti  ${EMPTY}
     Set Kuvaus  ${EMPTY}
     Set Kurssit  ${EMPTY}
     Set Yksityinen
@@ -88,7 +88,7 @@ Add Public Book
     Set Isbn  ${EMPTY}
     Set Tagit  ${EMPTY}
     Set Url  ${EMPTY}
-    Set Kommentit  ${EMPTY}
+    Set Kommentti  ${EMPTY}
     Set Kuvaus  ${EMPTY}
     Set Kurssit  ${EMPTY}
     Set Julkinen
@@ -213,9 +213,9 @@ Set Url
     [Arguments]  ${url}
     Input Text  url  ${url}
 
-Set Kommentit
-    [Arguments]  ${kommentit}
-    Input Text  kommentit  ${kommentit}
+Set Kommentti
+    [Arguments]  ${kommentti}
+    Input Text  kommentti  ${kommentti}
 
 Set Kuvaus
     [Arguments]  ${kuvaus}
