@@ -35,7 +35,7 @@ Mene omavalintaisella selaimella komentorivillä näkyvään osoitteeseen, jossa
 
 Ohjelmassa on kaksi käyttäjää, joilla voit kirjautua sisään:
 
-Käyttäjätunnus: "käyttäjä", Salasana: "salasana"
+Käyttäjätunnus: "kayttaja", Salasana: "salasana"
 
 Käyttäjätunnus: "tunnus", Salasana: "passu"
 
