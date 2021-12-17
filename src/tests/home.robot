@@ -129,8 +129,14 @@ User Can Not Login With Invalid Password
     Set Salasana  passu123
     Login Page Should Be Open
 
+User Can Search Reading Tips With Title
+    Login
+    Set Search  sort
+    Click Button  Etsi lukuvinkkejä
+    Searching Reading Tips Should Succeed
+    Page Should Not Contain  Sinuhe
+
 *** Keywords ***
-#Add Book And Go To Main Page
 
 #Testaa tietojen syöttämistä
 Add Book Should Succeed
@@ -149,20 +155,16 @@ Add Video Should Succeed
     List Page Should Be Open
     Page Should Contain  Los Gatos High School
 
+Searching Reading Tips Should Succeed
+    List Page Should Be Open
+    Page Should Contain  Merge sort algorithm
+
 See Reading List Should Succeed
     List Page Should Be Open
 
 Data Is Saved Succeed
     List Page Should Be Open
     Page Should Contain  Noksu kulkee ja keksii
-    
-#register ei tee mitään sillä rekisteröitymistä ei ole toteutettu vielä
-#Register
-#    Go To Register Page
-#    Set Nimimerkki  moro
-#    Set Salasana  tietoturva
-#    Input Text  password_confirmation  tietoturva
-#    Click Button  Rekisteröidy
 
 Login
     Go To Login Page
@@ -228,3 +230,7 @@ Set Yksityinen
 
 Set Julkinen
     Unselect Checkbox  yksityinen
+
+Set Search
+    [Arguments]  ${haku}
+    Input Text  word  ${haku}
