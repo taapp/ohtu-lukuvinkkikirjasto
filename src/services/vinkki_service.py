@@ -9,15 +9,9 @@ from repositories.user_repository import (
     user_repository as default_user_repository
 )
 
-#class UserInputError(Exception):
-#    pass
-
-#class ExistingUserError(Exception):
-#    pass
 
 class VinkkiService:
     def __init__(self, lukuvinkki_repository=default_lukuvinkki_repository, user_repository=default_user_repository):
-        self.users = []
         self._user = None
         self._lukuvinkki_repository = lukuvinkki_repository
         self._user_repository = user_repository
@@ -46,26 +40,25 @@ class VinkkiService:
         self._lukuvinkki_repository.muokkaa_vinkkia(vanhaotsikko, otsikko, kirjailija, isbn, tagit, url, kommentti, kuvaus, kurssit)
 
     def palauta_lista(self):
-        #return self.vinkkilista.palauta_lista()
-        #return self._lukuvinkki_repository.hae_vinkit()
         return self.listaa_lukuvinkit()
 
     def palauta_vinkki(self, otsikko):
         vinkki = self._lukuvinkki_repository.palauta_vinkki(otsikko)
         return vinkki
 
+    def filter_by_user_current(self, vinkki_list):
+        return [v for v in vinkki_list if v.username in (self._user.username, None)]
+
     def palauta_lista_user_current(self):
-        """Toimintaperiaate: Haetaan tietokannasta kaikki vinkit. Sen jälkeen suodatetaan vinkit, 
-        ja jätetään jäljelle vain ne vinkit, joiden username vastaa servicen _user:n username tai
-        joiden username on None (eli kaikille näkyvät vinkit)"""
         if self._user is None:
             raise Exception("Yritetään palauttaa lista vaikka _user==None !")
-        print(f"vinkki_service, palauta_lista_user_current-metodi, _user={self._user}")
         vinkit = self.listaa_lukuvinkit()
-        vinkit_filtered = [v for v in vinkit if v.username in (self._user.username, None)]
-        return vinkit_filtered
+        return self.filter_by_user_current(vinkit)
 
     def hae_vinkkia(self, haku):
         return self._lukuvinkki_repository.hae_vinkkia(haku)
+
+    def hae_vinkkia_user_current(self, haku):
+        return self.filter_by_user_current(self.hae_vinkkia(haku))
 
 vinkki_service = VinkkiService()

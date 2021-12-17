@@ -181,4 +181,5 @@ def modify_subject(subject_name):
 @login_required
 def render_search():
     searchword = request.form.get("word")
-    return render_template("list.html", lista=vinkki_service.hae_vinkkia(searchword))
+    #return render_template("list.html", lista=vinkki_service.hae_vinkkia(searchword))
+    return render_template("list.html", lista=vinkki_service.hae_vinkkia_user_current(searchword))
