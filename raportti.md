@@ -1,9 +1,9 @@
 ### Ryhmä Devaajat:
 
-####Viivi-Maria Baarman
-####Anna Kangasmaa
-####Julius Nieminen
-####Joona Räsänen
+#### Viivi-Maria Baarman
+#### Anna Kangasmaa
+#### Julius Nieminen
+#### Joona Räsänen
 
 Ohje (edaa pois):
 Kerrataan jokaisen sprintin aikana kohdatut ongelmat (prosessiin-, projektityöskentelyyn- ja teknisiin asioihin liittyvät)
