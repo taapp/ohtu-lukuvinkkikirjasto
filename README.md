@@ -14,7 +14,7 @@
 
 [Loput Robot testit](https://github.com/taapp/ohtu-lukuvinkkikirjasto/blob/main/src/tests/home.robot)
 
-[Loppuraportti](https://github.com/taapp/ohtu-lukuvinkkikirjasto/blob/main/raportti)
+[Loppuraportti](https://github.com/taapp/ohtu-lukuvinkkikirjasto/blob/main/raportti.md)
 
 ![GitHub Actions](https://github.com/taapp/ohtu-lukuvinkkikirjasto/workflows/CI/badge.svg)
 
