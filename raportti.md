@@ -5,10 +5,6 @@
 #### Julius Nieminen
 #### Joona Räsänen
 
-Ohje (edaa pois):
-Kerrataan jokaisen sprintin aikana kohdatut ongelmat (prosessiin-, projektityöskentelyyn- ja teknisiin asioihin liittyvät)
-Mikä sujui projektissa hyvin, mitä pitäisi parantaa seuraavaa kertaa varten
-Mitä asioita opitte, mitä asioita olisitte halunneet oppia, mikä tuntui turhalta
 
 ## Loppuraportti
 
@@ -27,6 +23,10 @@ Ensimmäisessä sprintissä tehtävänä oli varsin paljon konfigurointia ja muu
 Missään sprintissä en kohdannut erityisiä ongelmia, vaan haasteet olivat kokemattomuudessa esimerkiksi flaskin kanssa, ja ne saattoi hoitaa tekemällä ylimääräistä perehtymistyötä, jotta heikommillakin osa-alueilla nousi oman projektinsa tasolle. Opin paljon ohjelmakokonaisuuden rakentamisesta ja ymmärtämään integraatiotestauksen ihanuuden ja robot-testien idean. Ohjelmiston järkevästä rakenteesta ja toteutuksista oppisi aina mielellään lisää. Product owner - ohjaaja ei oikeastaaan toiminut jälkimmäisessä roolissa lainkaan. Se ei sinänsä haitannut projektissa, mutta jonkinlaisesta ohjauksesta voisi olla hyötyäkin.
 
 ### Julius
+
+Mielestäni pääasiallisin haaste projektin aikana oli, että vain yksi neljästä henkilöstä oli täysin päätoiminen opiskelija. Tämä vaikutti jonkin verran aikatauluihin, ja erityisesti toisessa sprintissä pääsimme aloittamaan työskentelyn turhan myöhään. Paransimme kuitenkin tätä jo seuraavassa sprintissä. Kommunikaatiossa tuli havaittua eräässä kohdassa puute, kun minä ja Anna olimme tehneet kerran jossain määrin päällekkäistä työtä, mutta tästä ei koitunut mitään varsinaista ongelmaa. Muuten olimme saaneet työtä jaettua suhteellisen hyvin, ja esimerkiksi itselläni ei tullut hankalia merge-konflikteja vastaan.
+
+Eniten uutta teknologioista opin flaskista (vaikkakaan en tähän kontribuioinut lainkaan), Robot Frameworkista ja Github actionseista. Muuten pääasiassa pärjäsin Ohjelmistotekniikka-kurssilla ja työelämässä oppimillani taidoilla. Mielenkiintoista oli mielestäni projektin työskentelytapa, sillä olen työelämässä ollut mukana erilaisissa projekteissa, joissa käytetään enemmän tai vähemmän ketteriä menetelmiä, mutta silti mielestäni kurssi ja miniprojekti antavat aiheeseen erinomaisen johdatuksen. En osaa suoraan nimetä miniprojekti asiaa, joka olisi tuntunut täysin turhalta.
 
 ### Joona
 
