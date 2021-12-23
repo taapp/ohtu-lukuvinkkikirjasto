@@ -30,6 +30,11 @@ Missään sprintissä en kohdannut erityisiä ongelmia, vaan haasteet olivat kok
 
 ### Joona
 
+Ensimmäisen sprintin aikana pääsin tutustumaan enemmän ulkoisiin CI palveluihin toteuttaessani github actionsia, vaikka kurssin aikana olin tehnyt aiheeseen liittyvät tehtävät niin tuli CI palveluiden helppous ja idea paremmin selville koko projektin aikana. Toisessa sprintissä pääsin työstämään robot-framework testejä, joiden ajattelin kurssin tehtävien perusteella olevan aivan järkyttävää, mutta iloiseksi yllätyksekseni näiden testien toteuttaminen olikin ihan mukavaa puuhaa. Opin tästä enemmän user story tasolla testaamisesta ja älysin sen helppouden ja hyödyn. Kolmannessa sprintissä robot testien lisäksi pääsin koodaamaan myös ominaisuuksia ohjelmistoon, jossa oli opeteltavaa, sillä kerkesin käymään ohjelmointi kurssit vielä, kun java oli niillä käytössä viimeistä kertaa. Vaikka olin itseopiskellut pythonia jonkin verran ei se silti ole niin hallussa kuin java, jolloin koodin lukemiseenkin meni jokin tovi, mutta tämä opetti itseäni paljon. Juuri tämän takia halusinkin käydä kurssin python version, vaikka java versiokin oli tarjolla.
+
+Projekti onnistui kokonaisuudessaan oikein hyvin ja sujuvasti, sillä jokainen teki sen mitä olimme sopineetkin yhdessä. Isompia ongelmia en tainnutkaan kohdata koko projektin aikana. Projekti opetti millaista saattaisi olla työelämässä ketterissä ohjelmistotuotantoprojekteissa, kuitenkin projektissa olleiden rajoitteiden kuten lyhyen työmäärän puitteissa. Projektin ansiosta opin ketterien menetelmien periaatteet myös paremmin. Myöskään tiimityöskentelyssä ei ollut ongelmia, sillä se sujui mukavasti discord kanavan välityksellä ja viikoittaisten daily scrumien ja retrospektiivien parissa.
+
+
 ### Yhteenveto
 
 Ryhmän työskentely sujui jouhevasti, eikä isoja ongelmia ilmennyt. Jonkin verran työskentelyä haittasi ryhmäläisten hyvin erilaiset työskentelyajat, mutta ongelmat pystyttiin ratkaisemaan pitämällä yhteyttä viestikanavalla.
