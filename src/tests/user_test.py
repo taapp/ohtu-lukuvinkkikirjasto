@@ -4,7 +4,7 @@ from entities.user import User
 
 class TestUser(unittest.TestCase):
     def setUp(self):
-        self.user = User("user","password123")
+        self.user = User("user", "password123")
 
     def test_get_username(self):
         self.assertEqual(self.user.get_username(), self.user.username)
